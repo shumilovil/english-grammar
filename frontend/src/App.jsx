@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleWantEat } from './redux/testReducer';
+import { Header } from './Components/Header/Header';
+import { Main } from './Components/Main/Main';
+import { Footer } from './Components/Footer/Footer';
 
 function App() {
+
+    const dispatch = useDispatch()
+    const name = useSelector((state) => state.eat.name)
+    const hunger = useSelector((state) => state.eat.wantEat)
+
+    const clickHandler = () => {
+        dispatch(toggleWantEat())
+    }
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-        </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-        </a>
-            </header>            
+        <div className='App'>
+            <Header />
+            <Main />
+            <Footer />
         </div>
     );
 }

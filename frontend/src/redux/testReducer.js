@@ -2,7 +2,7 @@ const TOGGLE_WANT_EAT = 'TOGGLE_WANT_EAT';
 const NEW_NAME = 'NEW_NAME';
 
 const initialState = {
-    name: 'Shum',
+    name: 'Shum111',
     wantEat: false
 };
 
