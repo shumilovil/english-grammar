@@ -5,16 +5,24 @@ body {
 }
 
 $breakPoint: 599px;
-$headerHeight: 88px;
+$headerHeight: 100px;
+$headerHeightMobile: 70px;
 $breadcrumbsWrapper: 50px;
 $footerHeight: 50px;
 $mainMinHeight: calc(100vh - #{$headerHeight} - #{$breadcrumbsWrapper} - #{$footerHeight});
+$mainMinHeightMobile: calc(100vh - #{$headerHeightMobile} - #{$breadcrumbsWrapper} - #{$footerHeight});
 $mainPaddingDesktop: 50px;
 $mainPaddingmobile: 20px;
 
 .header {
     height: $headerHeight;
-    background-color: #009688;    
+    // background-color: #009688;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/background.jpg");
+    background-size: auto 100%;
+
+    @media screen and (max-width: $breakPoint) {
+        height: $headerHeightMobile;
+    }
 
     &__content {
         height: $headerHeight;
@@ -31,6 +39,7 @@ $mainPaddingmobile: 20px;
         @media screen and (max-width: $breakPoint) {
             padding-left: $mainPaddingmobile;
             padding-right: $mainPaddingmobile;
+            height: $headerHeightMobile;
         }
 
         .anticon.anticon-menu {
@@ -72,8 +81,13 @@ $mainPaddingmobile: 20px;
 
 .main {
     background-color: white;
-    min-height: $mainMinHeight;
     padding: 20px;
+    min-height: $mainMinHeight;
+
+    @media screen and (max-width: $breakPoint) {
+        min-height: $mainMinHeightMobile;
+    }
+    
     &__wrapper {
         padding-left: $mainPaddingDesktop;
         padding-right: $mainPaddingDesktop;

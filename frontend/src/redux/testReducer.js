@@ -14,13 +14,13 @@ export const eatReducer = (state = initialState, action) => {
             return {
                 ...state,
                 wantEat: !state.wantEat
-            }
+            };
 
         case NEW_NAME:
             return {
                 ...state,
                 name: action.name
-            }  
+            };  
 
         default:
             return state;

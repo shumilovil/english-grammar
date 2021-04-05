@@ -12,5 +12,5 @@ export const AntBreadCrumbs = () => {
             </Breadcrumb.Item>            
             <Breadcrumb.Item>An Application</Breadcrumb.Item>
         </Breadcrumb>
-    )
-}
+    );
+};
