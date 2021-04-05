@@ -7,13 +7,13 @@ import { Footer } from './Components/Footer/Footer';
 
 function App() {
 
-    const dispatch = useDispatch()
-    const name = useSelector((state) => state.eat.name)
-    const hunger = useSelector((state) => state.eat.wantEat)
+    const dispatch = useDispatch();
+    const name = useSelector((state) => state.eat.name);
+    const hunger = useSelector((state) => state.eat.wantEat);
 
     const clickHandler = () => {
-        dispatch(toggleWantEat())
-    }
+        dispatch(toggleWantEat());
+    };
 
     return (
         <div className='App'>
