@@ -1,0 +1,20 @@
+.menu {
+    position: absolute;
+    // left: calc((100% - 1440px) / 2 + 50px);
+    .ant-menu-root {
+        // border-right: 1px solid lightgray;
+        // border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    width: 256px;
+
+    // transition-property: width;
+    // transition-duration: 0.5s;
+
+    // overflow: hidden;
+
+    &.menu-hidden {        
+        display: none;     
+    }
+}

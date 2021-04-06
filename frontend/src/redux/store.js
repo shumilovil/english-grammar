@@ -1,9 +1,9 @@
 import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import { eatReducer } from "./testReducer";
+import { appReducer } from "./testReducer";
 
 const rootReducer = combineReducers({
-    eat: eatReducer
+    app: appReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

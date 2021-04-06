@@ -1,0 +1,8 @@
+@import '../../GlobalVars.scss';
+
+.footer {
+    height: $footerHeight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

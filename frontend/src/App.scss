@@ -1,116 +1,12 @@
 @import "~antd/dist/antd.css";
+@import './GlobalVars.scss';
 
 body {
     background-color: #f0f2f5;
 }
 
-$breakPoint: 599px;
-$headerHeight: 100px;
-$headerHeightMobile: 70px;
-$breadcrumbsWrapper: 50px;
-$footerHeight: 50px;
-$mainMinHeight: calc(100vh - #{$headerHeight} - #{$breadcrumbsWrapper} - #{$footerHeight});
-$mainMinHeightMobile: calc(100vh - #{$headerHeightMobile} - #{$breadcrumbsWrapper} - #{$footerHeight});
-$mainPaddingDesktop: 50px;
-$mainPaddingmobile: 20px;
 
-.header {
-    height: $headerHeight;
-    // background-color: #009688;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/background.jpg");
-    background-size: auto 100%;
 
-    @media screen and (max-width: $breakPoint) {
-        height: $headerHeightMobile;
-    }
 
-    &__content {
-        height: $headerHeight;
-        padding-left: $mainPaddingDesktop;
-        padding-right: $mainPaddingDesktop;
-        max-width: 1440px;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
 
-        @media screen and (max-width: $breakPoint) {
-            padding-left: $mainPaddingmobile;
-            padding-right: $mainPaddingmobile;
-            height: $headerHeightMobile;
-        }
 
-        .anticon.anticon-menu {
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-            left: $mainPaddingDesktop;
-
-            @media screen and (max-width: $breakPoint) {
-                left: $mainPaddingmobile;
-                font-size: 20px;
-            }
-        }
-    }
-
-    &__logo {
-        color: white;
-
-        p {
-            text-align: center;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 30px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 0;
-            color: white;
-            line-height: 1;
-
-            @media screen and (max-width: $breakPoint) {
-                font-size: 20px;
-            }
-        }
-    }
-}
-
-.main {
-    background-color: white;
-    padding: 20px;
-    min-height: $mainMinHeight;
-
-    @media screen and (max-width: $breakPoint) {
-        min-height: $mainMinHeightMobile;
-    }
-    
-    &__wrapper {
-        padding-left: $mainPaddingDesktop;
-        padding-right: $mainPaddingDesktop;
-        max-width: 1440px;
-        margin-left: auto;
-        margin-right: auto;
-
-        @media screen and (max-width: $breakPoint) {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-    }
-
-    &__breadcrumbsWrapper {
-        height: $breadcrumbsWrapper;
-        display: flex;
-        align-items: center;
-    }
-}
-
-.footer {
-    height: $footerHeight;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

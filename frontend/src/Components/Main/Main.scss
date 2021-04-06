@@ -1,0 +1,30 @@
+@import '../../GlobalVars.scss';
+
+.main {
+    background-color: white;
+    padding: 20px;
+    min-height: $mainMinHeight;
+
+    @media screen and (max-width: $breakPoint) {
+        min-height: $mainMinHeightMobile;
+    }
+    
+    &__wrapper {
+        padding-left: $mainPaddingDesktop;
+        padding-right: $mainPaddingDesktop;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (max-width: $breakPoint) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    &__breadcrumbsWrapper {
+        height: $breadcrumbsWrapper;
+        display: flex;
+        align-items: center;
+    }
+}

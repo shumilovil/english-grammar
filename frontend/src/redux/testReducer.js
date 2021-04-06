@@ -1,26 +1,18 @@
-const TOGGLE_WANT_EAT = 'TOGGLE_WANT_EAT';
-const NEW_NAME = 'NEW_NAME';
+const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
 
 const initialState = {
-    name: 'Shum111',
-    wantEat: false
+    menuVisible: false 
 };
 
-export const eatReducer = (state = initialState, action) => {
+export const appReducer = (state = initialState, action) => {
 
     switch (action.type) {
 
-        case TOGGLE_WANT_EAT:
+        case TOGGLE_MENU_VISIBILITY:
             return {
                 ...state,
-                wantEat: !state.wantEat
-            };
-
-        case NEW_NAME:
-            return {
-                ...state,
-                name: action.name
-            };  
+                menuVisible: !state.menuVisible
+            };        
 
         default:
             return state;
@@ -30,5 +22,4 @@ export const eatReducer = (state = initialState, action) => {
 
 
 
-export const toggleWantEat = () => ({ type: TOGGLE_WANT_EAT });
-export const setNewName = (payload) => ({ type: NEW_NAME, payload });
+export const toggleMenuVisibility = () => ({ type: TOGGLE_MENU_VISIBILITY });
