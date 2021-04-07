@@ -1,9 +1,9 @@
 $breakPoint: 599px;
 $headerHeight: 100px;
 $headerHeightMobile: 70px;
-$breadcrumbsWrapper: 50px;
+$breadCrumbsHeight: 50px;
 $footerHeight: 50px;
-$mainMinHeight: calc(100vh - #{$headerHeight} - #{$breadcrumbsWrapper} - #{$footerHeight});
-$mainMinHeightMobile: calc(100vh - #{$headerHeightMobile} - #{$breadcrumbsWrapper} - #{$footerHeight});
+$mainMinHeight: calc(100vh - #{$headerHeight} - #{$breadCrumbsHeight} - #{$footerHeight});
+$mainMinHeightMobile: calc(100vh - #{$headerHeightMobile} - #{$breadCrumbsHeight} - #{$footerHeight});
 $mainPaddingDesktop: 50px;
-$mainPaddingmobile: 20px;
+$mainPaddingMobile: 15px;

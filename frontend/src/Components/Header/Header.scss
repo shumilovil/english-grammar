@@ -14,7 +14,7 @@
         height: $headerHeight;
         padding-left: $mainPaddingDesktop;
         padding-right: $mainPaddingDesktop;
-        max-width: 1440px;
+        // max-width: 1440px;
         margin-left: auto;
         margin-right: auto;
         display: flex;
@@ -23,23 +23,23 @@
         position: relative;
 
         @media screen and (max-width: $breakPoint) {
-            padding-left: $mainPaddingmobile;
-            padding-right: $mainPaddingmobile;
+            padding-left: $mainPaddingMobile;
+            padding-right: $mainPaddingMobile;
             height: $headerHeightMobile;
         }
 
-        .anticon.anticon-menu {
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-            left: $mainPaddingDesktop;
+        // .anticon.anticon-menu {
+        //     font-size: 24px;
+        //     color: white;
+        //     cursor: pointer;
+        //     position: absolute;
+        //     left: $mainPaddingDesktop;
 
-            @media screen and (max-width: $breakPoint) {
-                left: $mainPaddingmobile;
-                font-size: 20px;
-            }
-        }
+        //     @media screen and (max-width: $breakPoint) {
+        //         left: $mainPaddingMobile;
+        //         font-size: 20px;
+        //     }
+        // }
     }
 
     &__logo {
@@ -61,6 +61,19 @@
             @media screen and (max-width: $breakPoint) {
                 font-size: 20px;
             }
+        }
+    }
+
+    &__menuToggle {
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        left: $mainPaddingDesktop;
+
+        @media screen and (max-width: $breakPoint) {
+            left: $mainPaddingMobile;
+            font-size: 20px;
         }
     }
 }
