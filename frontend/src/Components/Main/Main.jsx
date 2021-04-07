@@ -12,48 +12,44 @@ export const Main = () => {
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
+           
+                
                
             </div>
         </main>

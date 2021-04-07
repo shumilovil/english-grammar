@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Menu } from 'antd';
 import {
     MailOutlined,
@@ -26,14 +26,22 @@ export const AntMenu = () => {
     //     setTheme(value ? 'dark' : 'light');
     // };
     const dispatch = useDispatch();
+    const menuVisible = useSelector((state) => state.app.menuVisible);
+
     const toggleMenu = ({ target }) => {
         if (!target.matches('.menu, .menu *')) {
-            console.log('inside condition');
             dispatch(toggleMenuVisibility());
         }
     };
 
-    const menuVisible = useSelector((state) => state.app.menuVisible);
+    useEffect(() => {
+        if (menuVisible) {
+            document.body.classList.add('menuIsOpen');            
+        } else {
+            document.body.classList.remove('menuIsOpen');
+        }
+    }, [menuVisible]);
+
 
     if (!menuVisible) return null;
 
@@ -46,7 +54,7 @@ export const AntMenu = () => {
                     //style={{ width: 256 }}
                     //defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}
-                    mode='vertical'
+                    mode='inline'
                     theme='light'>
                     <Menu.Item key="1" icon={<MailOutlined />}>
                         Navigation One
@@ -68,6 +76,176 @@ export const AntMenu = () => {
                         <Menu.Item key="9">Option 9</Menu.Item>
                         <Menu.Item key="10">Option 10</Menu.Item>
                     </SubMenu>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item key="link" icon={<LinkOutlined />}>
+                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                            Ant Design
+                        </a>
+                    </Menu.Item>
                     <Menu.Item key="link" icon={<LinkOutlined />}>
                         <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
                             Ant Design

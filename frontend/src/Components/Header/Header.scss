@@ -1,19 +1,17 @@
 @import '../../GlobalVars.scss';
 
 .header {
-    height: $headerHeight;
+    
     // background-color: #009688;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../images/background.jpg");
     background-size: auto 100%;
 
+    height: $headerHeight;
     @media screen and (max-width: $breakPoint) {
         height: $headerHeightMobile;
     }
 
-    &__content {
-        height: $headerHeight;
-        padding-left: $mainPaddingDesktop;
-        padding-right: $mainPaddingDesktop;
+    &__content { 
         // max-width: 1440px;
         margin-left: auto;
         margin-right: auto;
@@ -22,6 +20,9 @@
         justify-content: center;
         position: relative;
 
+        padding-left: $mainPaddingDesktop;
+        padding-right: $mainPaddingDesktop;
+        height: $headerHeight;
         @media screen and (max-width: $breakPoint) {
             padding-left: $mainPaddingMobile;
             padding-right: $mainPaddingMobile;
@@ -51,26 +52,24 @@
         }
 
         h1 {
-            font-size: 30px;
-            font-weight: bold;
-            text-transform: uppercase;
             margin: 0;
             color: white;
             line-height: 1;
-
+            text-transform: uppercase;            
+            font-weight: bold;
+            font-size: 30px;
             @media screen and (max-width: $breakPoint) {
                 font-size: 20px;
             }
         }
     }
 
-    &__menuToggle {
-        font-size: 24px;
+    &__menuToggle {        
         color: white;
         cursor: pointer;
         position: absolute;
         left: $mainPaddingDesktop;
-
+        font-size: 24px;
         @media screen and (max-width: $breakPoint) {
             left: $mainPaddingMobile;
             font-size: 20px;
