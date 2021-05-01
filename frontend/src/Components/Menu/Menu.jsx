@@ -10,7 +10,7 @@ import {
 
 import './Menu.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleMenuVisibility } from '../../redux/testReducer';
+import { toggleMenuVisibility } from '../../redux/mainReducer';
 
 const { SubMenu } = Menu;
 
@@ -46,7 +46,7 @@ export const AntMenu = () => {
     if (!menuVisible) return null;
 
     return (
-        <div className='menu__overlay'
+        <div className='overlay'
             onClick={toggleMenu}
         >
             <div className='menu'>

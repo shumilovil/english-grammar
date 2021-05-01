@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuOutlined, CloseSquareOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleMenuVisibility } from '../../redux/testReducer';
+import { toggleMenuVisibility } from '../../redux/mainReducer';
 import './Header.scss';
 
 

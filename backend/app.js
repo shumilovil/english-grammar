@@ -1,19 +1,45 @@
 const express = require('express');
+const config = require('config');
+const mongoose = require('mongoose');
 const cors = require('cors');
+const Category = require('./models/Category');
+const Subcategory = require('./models/Subcategory');
 
 const app = express();
 
-const port = 5000;
+const PORT = config.get('port') || 5000;
 
 
 app.use(cors());
-app.get('/', (req, res) => {
-  res.send('The sedulous hyena ate the antelope!');
-});
+app.use(express.json({ extended: true }));
+
 app.get('/shum', (req, res) => {
   res.send({ testRes: 'shumtestres111222' });
 });
 
-app.listen(port, () => {
-  console.log(`server is listening to me on ${port}`);
+app.get('/categories', async (req, res) => {
+  try {
+      const categories = await Category.find();
+      const subcategories = await Subcategory.find();
+      res.json({categories, subcategories});
+  } catch (error) {
+      res.status(500).json({ message: 'Something is wrong, try again' });
+  }
 });
+
+const start = async () => {
+  try {
+      await mongoose.connect(config.get('mongoUri'), {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          useCreateIndex: true
+      });
+      app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`));
+  } catch (error) {
+      console.log('Server error', error.message);
+      process.exit(1);
+  }
+
+};
+
+start();

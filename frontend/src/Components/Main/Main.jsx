@@ -1,5 +1,7 @@
 import React from 'react';
+import { Route, Switch } from 'react-router';
 import { AntBreadCrumbs } from '../Breadcrumbs/Breadcrumbs';
+import { Category } from '../Category/Category';
 import './Main.scss';
 
 export const Main = () => {
@@ -9,48 +11,57 @@ export const Main = () => {
                 <AntBreadCrumbs />
             </div>
             <div className='main'>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>  
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>              
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. </div> 
-           
-                
-               
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <div>Текст</div>
+                <Switch>
+                    <Route exact path='/:category(abc-street|grammar-smile)' component={Category} />
+                </Switch>
             </div>
         </main>
     );

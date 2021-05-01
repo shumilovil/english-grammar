@@ -9,22 +9,23 @@
     @media screen and (max-width: $breakPoint) {
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});
         left: $mainPaddingMobile;
-    }
+    }    
+}
 
-    &__overlay {
-        position: absolute;
-        width: 100%;        
-        background-color: rgba(0, 0, 0, 0.7);
-        height: calc(100% - #{$headerHeight});
-        @media screen and (max-width: $breakPoint) {
-            height: calc(100% - #{$headerHeightMobile});
-        }
+.overlay {
+    position: absolute;
+    width: 100%;        
+    background-color: rgba(0, 0, 0, 0.7);
+    height: calc(100% - #{$headerHeight});
+    @media screen and (max-width: $breakPoint) {
+        height: calc(100% - #{$headerHeightMobile});
     }
 }
 
 body {
     &.menuIsOpen {
-        position: fixed;
-        overflow-y: scroll;
+        // position: fixed;
+        // overflow-y: scroll;
+        // overflow-y: hidden;
     }
 }
