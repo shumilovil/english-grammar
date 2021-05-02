@@ -11,10 +11,11 @@ import {
 import './Menu.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenuVisibility } from '../../redux/mainReducer';
+import { Link } from 'react-router-dom';
 
 const { SubMenu } = Menu;
 
-export const AntMenu = () => {
+export const AntMenu = ({ categories, subcategories }) => {
     // const [mode, setMode] = React.useState('inline');
     // const [theme, setTheme] = React.useState('light');
 
@@ -34,16 +35,20 @@ export const AntMenu = () => {
         }
     };
 
-    useEffect(() => {
-        if (menuVisible) {
-            document.body.classList.add('menuIsOpen');            
-        } else {
-            document.body.classList.remove('menuIsOpen');
-        }
-    }, [menuVisible]);
+
+
+    // useEffect(() => {
+    //     if (menuVisible) {
+    //         document.body.classList.add('menuIsOpen');            
+    //     } else {
+    //         document.body.classList.remove('menuIsOpen');
+    //     }
+    // }, [menuVisible]);
 
 
     if (!menuVisible) return null;
+
+    console.log('subcategories', subcategories);
 
     return (
         <div className='overlay'
@@ -52,11 +57,40 @@ export const AntMenu = () => {
             <div className='menu'>
                 <Menu
                     //style={{ width: 256 }}
-                    //defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}
-                    mode='inline'
+                    // defaultSelectedKeys={['1']}
+                    // defaultOpenKeys={['sub1']}
+                    mode='vertical'
                     theme='light'>
-                    <Menu.Item key="1" icon={<MailOutlined />}>
+
+                    {categories.map(category => {
+
+                        // Define category items
+                        return (
+                            <SubMenu key={category._id} title={category.name}>
+
+                                {category.subcategoryIds.map(id => {
+
+                                    // Define subcategory items
+                                    const subcategory = subcategories.find(subcat => subcat._id === id);
+                                    const subcategoryKey = `${category._id}_${subcategory._id}`;
+                                    const subcategoryUrl = `/${category.url}/${subcategory.url}`;
+                                    return (
+                                        <Menu.Item key={subcategoryKey}>
+                                            <Link to={subcategoryUrl}>{subcategory.name}</Link>
+                                        </Menu.Item>
+                                    );
+                                })}
+
+                                <Menu.Item key={`all_${category._id}`}>
+                                    <Link to={`/${category.url}`}>Весь раздел</Link>
+                                </Menu.Item>
+
+                            </SubMenu>
+                        );
+                    })}
+
+
+                    {/* <Menu.Item key="1" icon={<MailOutlined />}>
                         Navigation One
                     </Menu.Item>
                     <Menu.Item key="2" icon={<CalendarOutlined />}>
@@ -85,172 +119,7 @@ export const AntMenu = () => {
                         <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
                             Ant Design
                         </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item key="link" icon={<LinkOutlined />}>
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                            Ant Design
-                        </a>
-                    </Menu.Item>
+                    </Menu.Item> */}
                 </Menu>
             </div>
         </div>
