@@ -2,7 +2,7 @@ const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
 const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY';
 
 const initialState = {
-    menuVisible: false,
+    isMenuVisible: false,
     categories: [
         {
             _id: 101,
@@ -45,7 +45,7 @@ export const mainReducer = (state = initialState, action) => {
         case TOGGLE_MENU_VISIBILITY:
             return {
                 ...state,
-                menuVisible: !state.menuVisible
+                isMenuVisible: !state.isMenuVisible
             };
 
         case SET_CURRENT_CATEGORY:

@@ -1,25 +1,21 @@
 import React from 'react';
-import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from "react-router-dom";
+import { useCategory } from '../../hooks/category.hook';
 import { setCurrentCategory } from '../../redux/mainReducer';
 
 export const Category = ({ categories }) => {
 
     const dispatch = useDispatch();
+    const currentCategory = useCategory(categories);
 
-    const categoryUrl = useParams().category;
-    console.log('categoryUrl', categoryUrl);
-    const currentCategory = useMemo(
-        () => categories.find(category => category.url === categoryUrl),
-        [categoryUrl, categories]
-    );
-    dispatch(setCurrentCategory(currentCategory));
+    if (currentCategory) {
+        dispatch(setCurrentCategory(currentCategory));
+    } else return <div>404 NOT FOUND</div>;   
 
 
     return (
         <div>
-            Категория {categoryUrl}
+            Категория {currentCategory.name}
         </div>
     );
 };

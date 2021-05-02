@@ -8,7 +8,7 @@ import './Header.scss';
 export const Header = () => {
 
     const dispatch = useDispatch();
-    const menuVisible = useSelector((state) => state.app.menuVisible);
+    const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
 
     const toggleMenu = () => {
         dispatch(toggleMenuVisibility());
@@ -17,10 +17,10 @@ export const Header = () => {
     return (
         <header className='header'>
             <div className='header__content'>
-                <div className='header__menuToggle'
+                <div className='header__menu-toggle'
                     onClick={toggleMenu}
                 >
-                    {menuVisible ? <CloseSquareOutlined /> : <MenuOutlined />}
+                    {isMenuVisible ? <CloseSquareOutlined /> : <MenuOutlined />}
                 </div>
                 <div className='header__logo'>
                     <h1>English grammar</h1>

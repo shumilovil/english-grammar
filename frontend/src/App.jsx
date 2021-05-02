@@ -1,11 +1,11 @@
 import './App.scss';
-import { Header } from './Components/Header/Header';
-import { Main } from './Components/Main/Main';
-import { Footer } from './Components/Footer/Footer';
-import { AntMenu } from './Components/Menu/Menu';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
+import { Footer } from './components/Footer/Footer';
+import { AntMenu } from './components/Menu/Menu';
 import { useSelector } from 'react-redux';
-import { getCategoryUrls } from './CommonHelpers/CommonHelpers';
-import { useMemo } from 'react';
+// import { getCategoryUrls } from './CommonHelpers/CommonHelpers';
+// import { useMemo } from 'react';
 
 function App() {
 
@@ -13,9 +13,9 @@ function App() {
     const subcategories = useSelector(state => state.app.subcategories);
     console.log('categories', categories);
 
-    const categoryUrls = useMemo(() => getCategoryUrls(categories), [categories]);
+    // const categoryUrls = useMemo(() => getCategoryUrls(categories), [categories]);
 
-    if (!categories || !subcategories) return null;
+    if (!categories || !subcategories) return null; // should be loading
 
     return (
         <div className='App'>
@@ -23,9 +23,9 @@ function App() {
             <AntMenu
                 categories={categories}
                 subcategories={subcategories} />
-            <Main
-                categoryUrls={categoryUrls}
-                categories={categories} />
+            <Main                
+                categories={categories}
+                subcategories={subcategories} />
             <Footer />
         </div>
     );
