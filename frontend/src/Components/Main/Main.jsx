@@ -13,9 +13,17 @@ export const Main = ({ categories, subcategories }) => {
             </div>
             <div className='main'>
                 <Switch>
-                    <Route exact path='/' render={() => <div>Здесь будут плашки</div>} />
-                    <Route path='/:category' render={() => <Category categories={categories} />} />
-                    <Route path='*' render={() => <div>404 NOT FOUND</div>} />
+
+                    <Route exact path='/'>
+                        <div>Здесь будут плашки</div>
+                    </Route>
+
+                    <Route path='/:category'>
+                        <Category
+                            categories={categories}
+                            subcategories={subcategories} />
+                    </Route>
+
                 </Switch>
             </div>
         </main>

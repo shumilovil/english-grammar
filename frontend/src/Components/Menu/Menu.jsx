@@ -53,7 +53,7 @@ export const AntMenu = ({ categories, subcategories }) => {
 
     // if (!menuVisible) return null;
 
-    console.log('subcategories', subcategories);
+    console.log('Menu');
 
     return (
         <div className={isMenuVisible ? 'overlay' : 'overlay-hidden'}
@@ -64,7 +64,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                     //style={{ width: 256 }}
                     // defaultSelectedKeys={['1']}
                     // defaultOpenKeys={['sub1']}
-                    mode='inline'
+                    mode='vertical'
                     theme='light'>
 
                     {categories.map(category => {

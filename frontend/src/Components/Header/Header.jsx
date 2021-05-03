@@ -5,7 +5,7 @@ import { toggleMenuVisibility } from '../../redux/mainReducer';
 import './Header.scss';
 
 
-export const Header = () => {
+export const Header = () => {    
 
     const dispatch = useDispatch();
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
