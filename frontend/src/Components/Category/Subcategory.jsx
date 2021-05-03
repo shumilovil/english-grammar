@@ -1,15 +1,19 @@
 import React from 'react';
-import { useRouteMatch } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { useCategoryOrSubcategory } from '../../hooks/category.hooks';
+import { setCurrentSubCategory } from '../../redux/mainReducer';
 
-export const Subcategory = ({ availableSubcategories }) => {
-
-    const { path, url } = useRouteMatch();
-    console.log('path', path);
-    console.log('url', url);
+export const Subcategory = ({ availableSubcategories }) => {    
+    
+    const currentSubCategory = useCategoryOrSubcategory(availableSubcategories, 'subcategory');
+    const dispatch = useDispatch();
+    if (currentSubCategory) {
+        dispatch(setCurrentSubCategory(currentSubCategory));
+    } else return <div>404 NOT FOUND</div>;
 
     return (
         <div>
-            Подкатегория
+            {currentSubCategory.name}
         </div>
     );
 }

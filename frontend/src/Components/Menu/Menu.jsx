@@ -12,6 +12,7 @@ import './Menu.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenuVisibility } from '../../redux/mainReducer';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const { SubMenu } = Menu;
 
@@ -29,7 +30,7 @@ export const AntMenu = ({ categories, subcategories }) => {
     const dispatch = useDispatch();
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
 
-    const toggleMenu = () => {
+    const toggleMenu = () => {        
         dispatch(toggleMenuVisibility());
     };
 
@@ -40,23 +41,31 @@ export const AntMenu = ({ categories, subcategories }) => {
 
 
 
-    // useEffect(() => {
-    //     if (menuVisible) {
-    //         document.body.classList.add('menuIsOpen');            
-    //     } else {
-    //         document.body.classList.remove('menuIsOpen');
-    //     }
-    // }, [menuVisible]);
+    useEffect(() => {
+        if (isMenuVisible) {
+            document.body.classList.add('menu-is-open');            
+        } else {
+            document.body.classList.remove('menu-is-open');
+        }
+    }, [isMenuVisible]);
 
 
-    if (!isMenuVisible) return null;
+    // if (!isMenuVisible) return null;
 
     // className={isMenuVisible ? 'overlay' : 'overlay-hidden'}
+    const resetSelectedItems = {
+        selectedKeys: [],
+        openKeys: []
+    };
 
-
+    if (isMenuVisible) {
+        for (let key in resetSelectedItems) {
+            delete resetSelectedItems[key];
+        }
+    } 
 
     return (
-        <div className='overlay'
+        <div className={isMenuVisible ? 'overlay' : 'overlay-hidden'}
             onClick={handleOverlay}
         >
             <div className='menu'>
@@ -64,8 +73,13 @@ export const AntMenu = ({ categories, subcategories }) => {
                     //style={{ width: 256 }}
                     // defaultSelectedKeys={['1']}
                     // defaultOpenKeys={['sub1']}
+                    // selectedKeys={undefined}
+                    // openKeys={false}
+
+                    onClick={toggleMenu}
                     mode='inline'
-                    theme='light'>
+                    theme='light'
+                    {...resetSelectedItems}>
 
                     {categories.map(category => {
 
@@ -80,17 +94,13 @@ export const AntMenu = ({ categories, subcategories }) => {
                                     const subcategoryKey = `${category._id}_${subcategory._id}`;
                                     const subcategoryUrl = `/${category.url}/${subcategory.url}`;
                                     return (
-                                        <Menu.Item
-                                            key={subcategoryKey}
-                                            onClick={toggleMenu}>
+                                        <Menu.Item key={subcategoryKey}>
                                             <Link to={subcategoryUrl}>{subcategory.name}</Link>
                                         </Menu.Item>
                                     );
                                 })}
 
-                                <Menu.Item
-                                    key={`all_${category._id}`}
-                                    onClick={toggleMenu}>
+                                <Menu.Item key={`all_${category._id}`}>
                                     <Link to={`/${category.url}`}>Весь раздел</Link>
                                 </Menu.Item>
 
@@ -129,6 +139,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                             Ant Design
                         </a>
                     </Menu.Item> */}
+                    <Menu.Divider/>
                     <Menu.Item key='reviews' >
                         Отзывы
                     </Menu.Item>

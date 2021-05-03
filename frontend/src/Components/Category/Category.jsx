@@ -7,15 +7,14 @@ import { setCurrentCategory } from '../../redux/mainReducer';
 import { Subcategory } from './Subcategory';
 
 export const Category = ({ categories, subcategories }) => {
-    
+
     const currentCategory = useCategoryOrSubcategory(categories, 'category');
     const availableSubcategories = useAvailableSubcategories(currentCategory, subcategories);
     const dispatch = useDispatch();
-    const { path, url } = useRouteMatch();
-
-    console.log('availableSubcategories', availableSubcategories);
+    const { path } = useRouteMatch();
 
     if (currentCategory) {
+        console.log('setCurrentCategory');
         dispatch(setCurrentCategory(currentCategory));
     } else return <div>404 NOT FOUND</div>;
 
@@ -28,7 +27,7 @@ export const Category = ({ categories, subcategories }) => {
             </Route>
 
             <Route path={`${path}/:subcategory`}>
-                <Subcategory availableSubcategories={availableSubcategories}/>
+                <Subcategory availableSubcategories={availableSubcategories} />
             </Route>
 
         </Switch>

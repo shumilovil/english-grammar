@@ -27,9 +27,13 @@
 }
 
 body {
-    &.menuIsOpen {
+    &.menu-is-open {
         // position: fixed;
         // overflow-y: scroll;
         // overflow-y: hidden;
+        @media screen and (max-width: $breakPoint) {
+            overflow-y: hidden;
+        }
+        
     }
 }

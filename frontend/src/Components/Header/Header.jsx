@@ -5,6 +5,7 @@ import { toggleMenuVisibility } from '../../redux/mainReducer';
 import './Header.scss';
 import { Close } from '../Icons/Close';
 import { BurgerMenu } from '../Icons/BurgerMenu';
+import { Link } from 'react-router-dom';
 
 
 export const Header = () => {    
@@ -25,8 +26,10 @@ export const Header = () => {
                     {isMenuVisible ? <Close /> : <BurgerMenu />}
                 </div>
                 <div className='header__logo'>
-                    <h1>English grammar</h1>
-                    <p>by Natalya Shumilova</p>
+                    <Link to='/'>
+                        <h1>English grammar</h1>
+                        <p>by Natalya Shumilova</p>
+                    </Link>
                 </div>
             </div>
         </header>

@@ -25,6 +25,52 @@ export const Main = ({ categories, subcategories }) => {
                     </Route>
 
                 </Switch>
+
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
+                <div>Lore</div>
             </div>
         </main>
     );

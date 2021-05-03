@@ -1,5 +1,6 @@
 const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
 const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY';
+const SET_CURRENT_SUBCATEGORY = 'SET_CURRENT_SUBCATEGORY';
 
 const initialState = {
     isMenuVisible: false,
@@ -35,7 +36,7 @@ const initialState = {
         }
     ],
     currentCategory: null,
-    currentSubCategory: null
+    currentSubcategory: null
 };
 
 export const mainReducer = (state = initialState, action) => {
@@ -54,6 +55,12 @@ export const mainReducer = (state = initialState, action) => {
                 currentCategory: action.category
             };
 
+        case SET_CURRENT_SUBCATEGORY:
+            return {
+                ...state,
+                currentSubcategory: action.subcategory
+            };
+
         default:
             return state;
     };
@@ -64,3 +71,4 @@ export const mainReducer = (state = initialState, action) => {
 
 export const toggleMenuVisibility = () => ({ type: TOGGLE_MENU_VISIBILITY });
 export const setCurrentCategory = (category) => ({ type: SET_CURRENT_CATEGORY, category });
+export const setCurrentSubCategory = (subcategory) => ({ type: SET_CURRENT_SUBCATEGORY, subcategory });
