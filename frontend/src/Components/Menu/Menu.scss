@@ -5,6 +5,7 @@
     width: 256px;
     overflow: auto;
     max-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+    border-radius: 15px;
     left: $mainPaddingDesktop;
     @media screen and (max-width: $breakPoint) {
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});

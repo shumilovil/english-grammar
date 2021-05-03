@@ -3,8 +3,8 @@
 .main {
     background-color: white;
     padding: 20px;
+    border-radius: 15px;
     min-height: $mainMinHeight;
-
     @media screen and (max-width: $breakPoint) {
         min-height: $mainMinHeightMobile;
     }

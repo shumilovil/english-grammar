@@ -64,7 +64,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                     //style={{ width: 256 }}
                     // defaultSelectedKeys={['1']}
                     // defaultOpenKeys={['sub1']}
-                    mode='vertical'
+                    mode='inline'
                     theme='light'>
 
                     {categories.map(category => {
@@ -132,6 +132,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                     <Menu.Item key='reviews' >
                         Отзывы
                     </Menu.Item>
+                    
                     <Menu.Item key='contacts'>
                         Контакты
                     </Menu.Item>
