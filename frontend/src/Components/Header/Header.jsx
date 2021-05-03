@@ -1,8 +1,10 @@
 import React from 'react';
-import { MenuOutlined, CloseSquareOutlined } from '@ant-design/icons';
+// import { MenuOutlined, CloseSquareOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenuVisibility } from '../../redux/mainReducer';
 import './Header.scss';
+import { Close } from '../Icons/Close';
+import { BurgerMenu } from '../Icons/BurgerMenu';
 
 
 export const Header = () => {    
@@ -20,7 +22,7 @@ export const Header = () => {
                 <div className='header__menu-toggle'
                     onClick={toggleMenu}
                 >
-                    {isMenuVisible ? <CloseSquareOutlined /> : <MenuOutlined />}
+                    {isMenuVisible ? <Close /> : <BurgerMenu />}
                 </div>
                 <div className='header__logo'>
                     <h1>English grammar</h1>

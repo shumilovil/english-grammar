@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Menu } from 'antd';
 // import {
 //     MailOutlined,
@@ -30,12 +30,10 @@ export const AntMenu = ({ categories, subcategories }) => {
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
 
     const toggleMenu = () => {
-        console.log('toggleMenu');
         dispatch(toggleMenuVisibility());
     };
 
     const handleOverlay = ({ target }) => {
-        console.log('handleOverlay', target.className);
         if (target.className === 'overlay') toggleMenu();
     };
 
@@ -51,12 +49,14 @@ export const AntMenu = ({ categories, subcategories }) => {
     // }, [menuVisible]);
 
 
-    // if (!menuVisible) return null;
+    if (!isMenuVisible) return null;
 
-    console.log('Menu');
+    // className={isMenuVisible ? 'overlay' : 'overlay-hidden'}
+
+
 
     return (
-        <div className={isMenuVisible ? 'overlay' : 'overlay-hidden'}
+        <div className='overlay'
             onClick={handleOverlay}
         >
             <div className='menu'>
@@ -76,7 +76,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                                 {category.subcategoryIds.map(id => {
 
                                     // Define subcategory items
-                                    const subcategory = subcategories.find(subcat => subcat._id === id);
+                                    const subcategory = subcategories.find(subcategory => subcategory._id === id);
                                     const subcategoryKey = `${category._id}_${subcategory._id}`;
                                     const subcategoryUrl = `/${category.url}/${subcategory.url}`;
                                     return (
@@ -128,11 +128,11 @@ export const AntMenu = ({ categories, subcategories }) => {
                         <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
                             Ant Design
                         </a>
-                    </Menu.Item> */}                   
+                    </Menu.Item> */}
                     <Menu.Item key='reviews' >
                         Отзывы
                     </Menu.Item>
-                    
+
                     <Menu.Item key='contacts'>
                         Контакты
                     </Menu.Item>

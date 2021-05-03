@@ -11,7 +11,6 @@ function App() {
 
     const categories = useSelector(state => state.app.categories);
     const subcategories = useSelector(state => state.app.subcategories);
-    console.log('categories', categories);
 
     // const categoryUrls = useMemo(() => getCategoryUrls(categories), [categories]);
 
