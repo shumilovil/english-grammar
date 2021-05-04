@@ -2,7 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import { AntBreadCrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { Category } from '../Category/Category';
+import { Contacts } from '../StaticPages/Contacts';
+import { Reviews } from '../StaticPages/Reviews';
 import './Main.scss';
+import { MainPage } from './MainPage';
 
 export const Main = ({ categories, subcategories }) => {
 
@@ -15,7 +18,15 @@ export const Main = ({ categories, subcategories }) => {
                 <Switch>
 
                     <Route exact path='/'>
-                        <div>Здесь будут плашки</div>
+                        <MainPage categories={categories} />
+                    </Route>
+
+                    <Route exact path='/otzyvy'>
+                        <Reviews />
+                    </Route>
+
+                    <Route exact path='/contacts'>
+                        <Contacts />
                     </Route>
 
                     <Route path='/:category'>
@@ -25,52 +36,6 @@ export const Main = ({ categories, subcategories }) => {
                     </Route>
 
                 </Switch>
-
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
-                <div>Lore</div>
             </div>
         </main>
     );

@@ -1,6 +1,7 @@
 const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
 const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY';
 const SET_CURRENT_SUBCATEGORY = 'SET_CURRENT_SUBCATEGORY';
+const SET_CURRENT_STATIC_PAGE = 'SET_CURRENT_STATIC_PAGE';
 
 const initialState = {
     isMenuVisible: false,
@@ -8,13 +9,13 @@ const initialState = {
         {
             _id: 101,
             name: 'ABC Street',
-            url: 'abc-street',
+            url: '/abc-street',
             subcategoryIds: [201, 202, 203]
         },
         {
             _id: 102,
             name: 'Grammar Smile',
-            url: 'grammar-smile',
+            url: '/grammar-smile',
             subcategoryIds: [201, 202]
         }
     ],
@@ -22,21 +23,22 @@ const initialState = {
         {
             _id: 201,
             name: 'Детям',
-            url: 'for-kids',
+            url: '/detyam',
         },
         {
             _id: 202,
             name: 'Учителям',
-            url: 'for-teachers',
+            url: '/uchitelyam',
         },
         {
             _id: 203,
             name: 'Скачать',
-            url: 'downloads',
+            url: '/downloads',
         }
     ],
     currentCategory: null,
-    currentSubcategory: null
+    currentSubcategory: null,
+    currentStaticPage: null
 };
 
 export const mainReducer = (state = initialState, action) => {
@@ -46,19 +48,28 @@ export const mainReducer = (state = initialState, action) => {
         case TOGGLE_MENU_VISIBILITY:
             return {
                 ...state,
-                isMenuVisible: !state.isMenuVisible
+                isMenuVisible: !state.isMenuVisible,
             };
 
         case SET_CURRENT_CATEGORY:
             return {
                 ...state,
-                currentCategory: action.category
+                currentCategory: action.category,
+                currentStaticPage: null
             };
 
         case SET_CURRENT_SUBCATEGORY:
             return {
                 ...state,
                 currentSubcategory: action.subcategory
+            };
+
+        case SET_CURRENT_STATIC_PAGE:
+            return {
+                ...state,
+                currentStaticPage: action.staticPage,
+                currentCategory: null,
+                currentSubcategory: null
             };
 
         default:
@@ -72,3 +83,4 @@ export const mainReducer = (state = initialState, action) => {
 export const toggleMenuVisibility = () => ({ type: TOGGLE_MENU_VISIBILITY });
 export const setCurrentCategory = (category) => ({ type: SET_CURRENT_CATEGORY, category });
 export const setCurrentSubCategory = (subcategory) => ({ type: SET_CURRENT_SUBCATEGORY, subcategory });
+export const setCurrentStaticPage = (staticPage) => ({ type: SET_CURRENT_STATIC_PAGE, staticPage });

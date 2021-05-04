@@ -30,7 +30,7 @@ export const AntMenu = ({ categories, subcategories }) => {
     const dispatch = useDispatch();
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
 
-    const toggleMenu = () => {        
+    const toggleMenu = () => {
         dispatch(toggleMenuVisibility());
     };
 
@@ -43,7 +43,7 @@ export const AntMenu = ({ categories, subcategories }) => {
 
     useEffect(() => {
         if (isMenuVisible) {
-            document.body.classList.add('menu-is-open');            
+            document.body.classList.add('menu-is-open');
         } else {
             document.body.classList.remove('menu-is-open');
         }
@@ -62,7 +62,7 @@ export const AntMenu = ({ categories, subcategories }) => {
         for (let key in resetSelectedItems) {
             delete resetSelectedItems[key];
         }
-    } 
+    }
 
     return (
         <div className={isMenuVisible ? 'overlay' : 'overlay-hidden'}
@@ -92,7 +92,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                                     // Define subcategory items
                                     const subcategory = subcategories.find(subcategory => subcategory._id === id);
                                     const subcategoryKey = `${category._id}_${subcategory._id}`;
-                                    const subcategoryUrl = `/${category.url}/${subcategory.url}`;
+                                    const subcategoryUrl = `${category.url}${subcategory.url}`;
                                     return (
                                         <Menu.Item key={subcategoryKey}>
                                             <Link to={subcategoryUrl}>{subcategory.name}</Link>
@@ -101,7 +101,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                                 })}
 
                                 <Menu.Item key={`all_${category._id}`}>
-                                    <Link to={`/${category.url}`}>Весь раздел</Link>
+                                    <Link to={category.url}>Весь раздел</Link>
                                 </Menu.Item>
 
                             </SubMenu>
@@ -139,14 +139,14 @@ export const AntMenu = ({ categories, subcategories }) => {
                             Ant Design
                         </a>
                     </Menu.Item> */}
-                    <Menu.Divider/>
-                    
+                    <Menu.Divider />
+
                     <Menu.Item key='reviews' >
-                        Отзывы
+                        <Link to='/otzyvy'>Отзывы</Link>
                     </Menu.Item>
 
                     <Menu.Item key='contacts'>
-                        Контакты
+                        <Link to='/contacts'>Контакты</Link>
                     </Menu.Item>
 
                 </Menu>

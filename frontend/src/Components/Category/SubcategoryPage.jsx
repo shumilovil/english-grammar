@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useCatOrSubcat } from '../../hooks/category.hooks';
 import { setCurrentSubCategory } from '../../redux/mainReducer';
 
-export const Subcategory = ({ availableSubcategories }) => {    
+export const SubcategoryPage = ({ availableSubcategories }) => {    
     
     const currentSubCategory = useCatOrSubcat(availableSubcategories, 'subcategory');
     const dispatch = useDispatch();
@@ -16,4 +16,4 @@ export const Subcategory = ({ availableSubcategories }) => {
             {currentSubCategory.name}
         </div>
     );
-}
+};

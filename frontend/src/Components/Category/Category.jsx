@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import { useCatOrSubcat } from '../../hooks/category.hooks';
 import { useAvailableSubcat } from '../../hooks/subcategory.hooks';
-import { setCurrentCategory, setCurrentSubCategory } from '../../redux/mainReducer';
-import { Subcategory } from './Subcategory';
+import { setCurrentCategory } from '../../redux/mainReducer';
+import { CategoryPage } from './CategoryPage';
+import { SubcategoryPage } from './SubcategoryPage';
 
 export const Category = ({ categories, subcategories }) => {
 
@@ -12,8 +13,6 @@ export const Category = ({ categories, subcategories }) => {
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
     const { path } = useRouteMatch();
     const dispatch = useDispatch();    
-
-    dispatch(setCurrentSubCategory(null));
 
     if (currentCategory) {
         console.log('setCurrentCategory');
@@ -24,12 +23,14 @@ export const Category = ({ categories, subcategories }) => {
         <Switch>
 
             <Route exact path={path}>
-                <div>Категория {currentCategory.name}</div>
-                {availableSubcategories.map(subcategory => <div key={subcategory._id}>{subcategory.name}</div>)}
+                <CategoryPage
+                    currentCategory={currentCategory}
+                    availableSubcategories={availableSubcategories} />
             </Route>
 
             <Route path={`${path}/:subcategory`}>
-                <Subcategory availableSubcategories={availableSubcategories} />
+                <SubcategoryPage
+                    availableSubcategories={availableSubcategories} />
             </Route>
 
         </Switch>
