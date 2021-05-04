@@ -7,3 +7,4 @@ $mainMinHeight: calc(100vh - #{$headerHeight} - #{$breadCrumbsHeight} - #{$foote
 $mainMinHeightMobile: calc(100vh - #{$headerHeightMobile} - #{$breadCrumbsHeight} - #{$footerHeight});
 $mainPaddingDesktop: 50px;
 $mainPaddingMobile: 15px;
+$maxAppWidth: none;

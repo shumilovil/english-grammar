@@ -12,7 +12,7 @@
     }
 
     &__content { 
-        // max-width: 1440px;
+        max-width: $maxAppWidth;
         margin-left: auto;
         margin-right: auto;
         display: flex;

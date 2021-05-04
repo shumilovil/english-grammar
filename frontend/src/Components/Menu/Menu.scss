@@ -10,7 +10,10 @@
     @media screen and (max-width: $breakPoint) {
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});
         left: $mainPaddingMobile;
-    }    
+    } 
+    @media screen and (min-width: $maxAppWidth) {
+        left: calc((100vw - #{$maxAppWidth} + #{$mainPaddingDesktop} * 2) / 2);
+    }
 }
 
 .overlay {
