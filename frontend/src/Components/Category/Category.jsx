@@ -1,15 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Switch, useRouteMatch } from 'react-router';
-import { useCategoryOrSubcategory } from '../../hooks/category.hooks';
-import { useAvailableSubcategories } from '../../hooks/subcategory.hooks';
+import { useCatOrSubcat } from '../../hooks/category.hooks';
+import { useAvailableSubcat } from '../../hooks/subcategory.hooks';
 import { setCurrentCategory, setCurrentSubCategory } from '../../redux/mainReducer';
 import { Subcategory } from './Subcategory';
 
 export const Category = ({ categories, subcategories }) => {
 
-    const currentCategory = useCategoryOrSubcategory(categories, 'category');
-    const availableSubcategories = useAvailableSubcategories(currentCategory, subcategories);
+    const currentCategory = useCatOrSubcat(categories, 'category');
+    const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
     const { path } = useRouteMatch();
     const dispatch = useDispatch();    
 

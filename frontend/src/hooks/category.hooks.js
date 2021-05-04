@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useParams } from 'react-router';
 
-export const useCategoryOrSubcategory = (categories, categoryType) => {
+export const useCatOrSubcat = (categories, categoryType) => {
     const { [categoryType]: categoryUrl } = useParams();
     console.log(`${categoryType}URL`, categoryUrl);
     const currentCategory = useMemo(

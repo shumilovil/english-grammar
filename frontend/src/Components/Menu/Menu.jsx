@@ -140,6 +140,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                         </a>
                     </Menu.Item> */}
                     <Menu.Divider/>
+                    
                     <Menu.Item key='reviews' >
                         Отзывы
                     </Menu.Item>

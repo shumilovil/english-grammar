@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 
-export const useAvailableSubcategories = (currentCategory, subcategories) => {
+export const useAvailableSubcat = (currentCategory, subcategories) => {
     const availableSubcategories = useMemo(() => {
         return currentCategory
             && subcategories
