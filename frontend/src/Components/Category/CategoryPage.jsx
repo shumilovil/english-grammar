@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCurrentSubCategory } from '../../redux/mainReducer';
+import { textContent } from '../TextContent/Aggregated';
+import './CategoryPage.scss';
 
-export const CategoryPage = ({currentCategory, availableSubcategories}) => {
-    
+export const CategoryPage = ({ currentCategory, availableSubcategories }) => {
+
     const dispatch = useDispatch();
-    dispatch(setCurrentSubCategory(null));
+
+    const categoryText = textContent[currentCategory.name]
+        && textContent[currentCategory.name].categorie;
+
+    useEffect(() => dispatch(setCurrentSubCategory(null)));
 
     return (
-        <div>
-            <div>Категория {currentCategory.name}</div>
-            { availableSubcategories.map(subcategory => <div key={subcategory._id}>{subcategory.name}</div>)}
+        <div className='category'>            
+            <h2 className='category__title'>{currentCategory.title}</h2>
+
+            {categoryText && <div>{categoryText}</div>}
+
+            {availableSubcategories.map(subcategory => {
+                return (
+                    <div key={subcategory._id}>{subcategory.title}</div>
+                );
+            })}
+            
         </div>
     );
 };

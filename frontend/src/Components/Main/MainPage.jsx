@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setCurrentCategory, setCurrentSubCategory } from '../../redux/mainReducer';
@@ -8,8 +8,11 @@ import './MainPage.scss';
 export const MainPage = ({ categories }) => {
 
     const dispatch = useDispatch();
-    dispatch(setCurrentCategory(null));
-    dispatch(setCurrentSubCategory(null));
+
+    useEffect(() => {
+        dispatch(setCurrentCategory(null));
+        dispatch(setCurrentSubCategory(null));
+    });
 
     return (
         <div className='main-page'>

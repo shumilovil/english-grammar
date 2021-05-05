@@ -1,10 +1,10 @@
 $breakPoint: 599px;
 $headerHeight: 100px;
 $headerHeightMobile: 70px;
-$breadCrumbsHeight: 50px;
-$footerHeight: 50px;
+$breadCrumbsHeight: 40px;
+$footerHeight: 40px;
 $mainMinHeight: calc(100vh - #{$headerHeight} - #{$breadCrumbsHeight} - #{$footerHeight});
 $mainMinHeightMobile: calc(100vh - #{$headerHeightMobile} - #{$breadCrumbsHeight} - #{$footerHeight});
-$mainPaddingDesktop: 50px;
+$mainPaddingDesktop: 40px;
 $mainPaddingMobile: 15px;
 $maxAppWidth: none;

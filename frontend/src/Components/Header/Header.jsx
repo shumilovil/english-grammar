@@ -31,8 +31,8 @@ export const Header = () => {
                 </div>
                 <div className='header__logo' onClick={logoClickHandler}>
                     <Link to='/'>
-                        <h1>English grammar</h1>
-                        <p>by Natalya Shumilova</p>
+                        <h1 className='header__logo-title'>English grammar</h1>
+                        <p className='header__logo-text'>by Natalya Shumilova</p>
                     </Link>
                 </div>
             </div>

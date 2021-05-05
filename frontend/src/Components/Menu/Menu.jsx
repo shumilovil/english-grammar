@@ -85,7 +85,7 @@ export const AntMenu = ({ categories, subcategories }) => {
 
                         // Define category items
                         return (
-                            <SubMenu key={category._id} title={category.name}>
+                            <SubMenu key={category._id} title={category.title}>
 
                                 {category.subcategoryIds.map(id => {
 
@@ -95,7 +95,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                                     const subcategoryUrl = `${category.url}${subcategory.url}`;
                                     return (
                                         <Menu.Item key={subcategoryKey}>
-                                            <Link to={subcategoryUrl}>{subcategory.name}</Link>
+                                            <Link to={subcategoryUrl}>{subcategory.title}</Link>
                                         </Menu.Item>
                                     );
                                 })}

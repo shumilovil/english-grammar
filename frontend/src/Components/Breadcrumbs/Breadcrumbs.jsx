@@ -20,7 +20,7 @@ export const AntBreadCrumbs = () => {
                 </Breadcrumb.Item>
 
                 <Breadcrumb.Item>
-                    {currentCategory.name}
+                    {currentCategory.title}
                 </Breadcrumb.Item>
 
             </Breadcrumb>
@@ -36,11 +36,11 @@ export const AntBreadCrumbs = () => {
                 </Breadcrumb.Item>
 
                 <Breadcrumb.Item>
-                    <Link to={currentCategory.url}>{currentCategory.name}</Link>
+                    <Link to={currentCategory.url}>{currentCategory.title}</Link>
                 </Breadcrumb.Item>
 
                 <Breadcrumb.Item>
-                    {currentSubcategory.name}
+                    {currentSubcategory.title}
                 </Breadcrumb.Item>
 
             </Breadcrumb>
@@ -56,7 +56,7 @@ export const AntBreadCrumbs = () => {
                 </Breadcrumb.Item>
 
                 <Breadcrumb.Item>
-                    {currentStaticPage.name}
+                    {currentStaticPage.title}
                 </Breadcrumb.Item>
 
             </Breadcrumb>

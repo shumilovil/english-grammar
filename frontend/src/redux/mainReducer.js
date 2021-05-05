@@ -10,6 +10,7 @@ const initialState = {
         {
             _id: 101,
             name: 'ABC Street',
+            title: 'ABC Street',
             url: '/abc-street',
             description: 'Обучение младших школьников технике чтения на английском языке',
             subcategoryIds: [201, 202, 203]
@@ -17,13 +18,15 @@ const initialState = {
         {
             _id: 102,
             name: 'Grammar Smile',
+            title: 'Grammar Smile',
             url: '/grammar-smile',
             description: 'Обучение младших школьников грамматике английского языка',
             subcategoryIds: [201, 202]
         },
         {
             _id: 103,
-            name: 'Составление вопросов',
+            name: 'Questions',
+            title: 'Составление вопросов',
             url: '/sostavlenie-voprosov',
             description: 'Построение всех видов вопросов с помощью опорных схем',
             subcategoryIds: []
@@ -32,18 +35,21 @@ const initialState = {
     subcategories: [
         {
             _id: 201,
-            name: 'Детям',
+            name: 'Detyam',
+            title: 'Детям',
             url: '/detyam',
         },
         {
             _id: 202,
-            name: 'Учителям',
+            name: 'Uchitelyam',
+            title: 'Учителям',
             url: '/uchitelyam',
         },
         {
             _id: 203,
-            name: 'Скачать',
-            url: '/downloads',
+            name: 'Files',
+            title: 'Файлы',
+            url: '/files',
         }
     ],
     currentCategory: null,

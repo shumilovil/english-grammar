@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import { useCatOrSubcat } from '../../hooks/category.hooks';
@@ -12,12 +12,17 @@ export const Category = ({ categories, subcategories }) => {
     const currentCategory = useCatOrSubcat(categories, 'category');
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
     const { path } = useRouteMatch();
-    const dispatch = useDispatch();    
+    const dispatch = useDispatch();
 
-    if (currentCategory) {
-        console.log('setCurrentCategory');
-        dispatch(setCurrentCategory(currentCategory));
-    } else return <div>404 NOT FOUND</div>;
+    useEffect(() => {
+        if (currentCategory) {
+            dispatch(setCurrentCategory(currentCategory));
+        }
+    });
+
+    if (!currentCategory) {
+        return <div>404 NOT FOUND</div>;
+    }
 
     return (
         <Switch>
