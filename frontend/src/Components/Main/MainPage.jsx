@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setCurrentCategory, setCurrentSubCategory } from '../../redux/mainReducer';
+import { Card } from '../Card/Card';
+import './MainPage.scss';
 
 export const MainPage = ({ categories }) => {
 
@@ -9,9 +11,14 @@ export const MainPage = ({ categories }) => {
     dispatch(setCurrentSubCategory(null));
 
     return (
-        <div>
-            <div>Здесь будут плашки</div>
-            {categories.map(category => <div key={category._id}>{category.name}</div>)}
+        <div className='main-page'>            
+            <div className='main-page__cards'>
+                {categories.map(category => {
+                    return (
+                        <Card category={category}/>
+                    );
+                })}
+            </div>
         </div>
     );
 };

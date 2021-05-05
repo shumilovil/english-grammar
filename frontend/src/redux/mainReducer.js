@@ -1,4 +1,5 @@
 const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
+const HIDE_MENU = 'HIDE_MENU';
 const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY';
 const SET_CURRENT_SUBCATEGORY = 'SET_CURRENT_SUBCATEGORY';
 const SET_CURRENT_STATIC_PAGE = 'SET_CURRENT_STATIC_PAGE';
@@ -10,13 +11,22 @@ const initialState = {
             _id: 101,
             name: 'ABC Street',
             url: '/abc-street',
+            description: 'Обучение младших школьников технике чтения на английском языке',
             subcategoryIds: [201, 202, 203]
         },
         {
             _id: 102,
             name: 'Grammar Smile',
             url: '/grammar-smile',
+            description: 'Обучение младших школьников грамматике английского языка',
             subcategoryIds: [201, 202]
+        },
+        {
+            _id: 103,
+            name: 'Составление вопросов',
+            url: '/sostavlenie-voprosov',
+            description: 'Построение всех видов вопросов с помощью опорных схем',
+            subcategoryIds: []
         }
     ],
     subcategories: [
@@ -51,6 +61,12 @@ export const mainReducer = (state = initialState, action) => {
                 isMenuVisible: !state.isMenuVisible,
             };
 
+        case HIDE_MENU:
+            return {
+                ...state,
+                isMenuVisible: false
+            };
+
         case SET_CURRENT_CATEGORY:
             return {
                 ...state,
@@ -81,6 +97,7 @@ export const mainReducer = (state = initialState, action) => {
 
 
 export const toggleMenuVisibility = () => ({ type: TOGGLE_MENU_VISIBILITY });
+export const hideMenu = () => ({ type: HIDE_MENU });
 export const setCurrentCategory = (category) => ({ type: SET_CURRENT_CATEGORY, category });
 export const setCurrentSubCategory = (subcategory) => ({ type: SET_CURRENT_SUBCATEGORY, subcategory });
 export const setCurrentStaticPage = (staticPage) => ({ type: SET_CURRENT_STATIC_PAGE, staticPage });

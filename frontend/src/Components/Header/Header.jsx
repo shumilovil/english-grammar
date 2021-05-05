@@ -1,7 +1,7 @@
 import React from 'react';
 // import { MenuOutlined, CloseSquareOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleMenuVisibility } from '../../redux/mainReducer';
+import { hideMenu, toggleMenuVisibility } from '../../redux/mainReducer';
 import './Header.scss';
 import { Close } from '../Icons/Close';
 import { BurgerMenu } from '../Icons/BurgerMenu';
@@ -17,6 +17,10 @@ export const Header = () => {
         dispatch(toggleMenuVisibility());
     };
 
+    const logoClickHandler = () => {
+        dispatch(hideMenu());
+    };
+
     return (
         <header className='header'>
             <div className='header__content'>
@@ -25,7 +29,7 @@ export const Header = () => {
                 >
                     {isMenuVisible ? <Close /> : <BurgerMenu />}
                 </div>
-                <div className='header__logo'>
+                <div className='header__logo' onClick={logoClickHandler}>
                     <Link to='/'>
                         <h1>English grammar</h1>
                         <p>by Natalya Shumilova</p>
