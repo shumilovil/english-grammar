@@ -15,7 +15,7 @@
         margin-bottom: 0 !important;
         min-height: 60px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-            url("../../images/card_background2.jpg");
+            url("../../images/card_background.jpg");
         background-size: auto 100%;
         color: white;
         padding-top: 12px;
@@ -25,14 +25,18 @@
         margin-bottom: 0;
         // margin-top: 15px;
         padding: 12px 10px 15px 10px;
-        border-bottom: solid 1px lightgray; //#f0f0f0
-        border-left: solid 1px lightgray; //#f0f0f0
-        border-right: solid 1px lightgray; //#f0f0f0
+        border-bottom: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
+        border-left: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
+        border-right: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         // background-color: #716b6b12;
 
         color: rgba(0, 0, 0, 0.85);
+
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 }
 
@@ -42,6 +46,6 @@
         border-bottom: solid 1px #aaa8a8; //#f0f0f0
         border-left: solid 1px #aaa8a8; //#f0f0f0
         border-right: solid 1px #aaa8a8; //#f0f0f0
-        
+   
     }
 }

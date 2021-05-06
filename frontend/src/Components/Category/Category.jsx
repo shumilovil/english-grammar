@@ -35,6 +35,7 @@ export const Category = ({ categories, subcategories }) => {
 
             <Route path={`${path}/:subcategory`}>
                 <SubcategoryPage
+                    currentCategory={currentCategory}
                     availableSubcategories={availableSubcategories} />
             </Route>
 

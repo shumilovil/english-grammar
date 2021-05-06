@@ -1,6 +1,21 @@
-.category {   
+@import "../../GlobalVars.scss";
 
-    li {
-        margin-bottom: 7px;
+@mixin animation {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.category {  
+
+    &__big-btns {
+        display: flex;
+        flex-wrap: wrap;
+        // margin-top: 20px;
+        @media screen and (max-width: $breakPoint) {
+            width: 100%;
+            display: block;
+            margin-top: 20px;
+        }
     }
 }

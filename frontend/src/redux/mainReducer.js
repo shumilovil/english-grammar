@@ -21,7 +21,7 @@ const initialState = {
             title: 'Grammar Smile',
             url: '/grammar-smile',
             description: 'Обучение младших школьников грамматике английского языка',
-            subcategoryIds: [201, 202]
+            subcategoryIds: [201, 202, 203]
         },
         {
             _id: 103,

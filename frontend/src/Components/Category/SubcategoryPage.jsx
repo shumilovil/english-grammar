@@ -2,10 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useCatOrSubcat } from '../../hooks/category.hooks';
 import { setCurrentSubCategory } from '../../redux/mainReducer';
+import { pagesContent } from '../PagesContent/Aggregated';
 
-export const SubcategoryPage = ({ availableSubcategories }) => {
+export const SubcategoryPage = ({ availableSubcategories, currentCategory }) => {
 
-    const currentSubCategory = useCatOrSubcat(availableSubcategories, 'subcategory');
+    const currentSubCategory = useCatOrSubcat(availableSubcategories, 'subcategory');    
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,9 +20,13 @@ export const SubcategoryPage = ({ availableSubcategories }) => {
         return <div>404 NOT FOUND</div>;
     }
 
+    const subcategoryContent = pagesContent[currentCategory.name]
+        && pagesContent[currentCategory.name].subcategory
+        && pagesContent[currentCategory.name].subcategory[currentSubCategory.name];
+
     return (
-        <div>
-            {currentSubCategory.title}
+        <div className='subcategory'>
+            {subcategoryContent}
         </div>
     );
 };

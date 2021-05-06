@@ -1,0 +1,50 @@
+@import "../../GlobalVars.scss";
+
+@mixin animation {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.big-button {
+    border: solid 1px rgb(217, 217, 217);
+    border-radius: 15px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.85) !important;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 250px;
+    @media screen and (max-width: $breakPoint) {
+        width: 100%;
+    }
+
+    @include animation();
+
+    &:hover {
+        // background-color: #1890ff;
+        border-color: #aaa8a8;
+        // color: white;
+
+        svg path {
+            // fill: white;
+        }
+    }
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    p {
+        margin-bottom: 0;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+
+    svg path {
+        @include animation();
+        fill: rgba(0, 0, 0, 0.85);
+    }
+}

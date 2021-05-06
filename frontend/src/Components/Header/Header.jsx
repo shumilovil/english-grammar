@@ -3,8 +3,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideMenu, toggleMenuVisibility } from '../../redux/mainReducer';
 import './Header.scss';
-import { Close } from '../Icons/Close';
-import { BurgerMenu } from '../Icons/BurgerMenu';
+import { CloseIcon } from '../Icons/HeaderIcons/CloseIcon';
+import { MenuIcon } from '../Icons/HeaderIcons/MenuIcon';
 import { Link } from 'react-router-dom';
 
 
@@ -27,7 +27,7 @@ export const Header = () => {
                 <div className='header__menu-toggle'
                     onClick={toggleMenu}
                 >
-                    {isMenuVisible ? <Close /> : <BurgerMenu />}
+                    {isMenuVisible ? <CloseIcon /> : <MenuIcon />}
                 </div>
                 <div className='header__logo' onClick={logoClickHandler}>
                     <Link to='/'>
