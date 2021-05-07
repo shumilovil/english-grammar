@@ -10,11 +10,11 @@ import { MainPage } from './MainPage';
 export const Main = ({ categories, subcategories }) => {
 
     return (
-        <main className='main__wrapper'>
+        <main className='main'>
             <div className='main__bread-crumbs-wrapper'>
                 <AntBreadCrumbs />
             </div>
-            <div className='main'>
+            <div className='main__content'>
                 <Switch>
 
                     <Route exact path='/'>

@@ -1,24 +1,24 @@
-@import '../../GlobalVars.scss';
+@import "../../GlobalVars.scss";
 
 .main {
-    background-color: white;
-    padding: 20px;
-    border-radius: $borderRadius;
-    min-height: $mainMinHeight;
-    @media screen and (max-width: $breakPoint) {
-        min-height: $mainMinHeightMobile;
-    }
-    
-    &__wrapper {        
-        max-width: $maxAppWidth;
-        margin-left: auto;
-        margin-right: auto;
+    max-width: $maxAppWidth;
+    margin-left: auto;
+    margin-right: auto;
 
-        padding-left: $mainPaddingDesktop;
-        padding-right: $mainPaddingDesktop;
+    padding-left: $mainPaddingDesktop;
+    padding-right: $mainPaddingDesktop;
+    @media screen and (max-width: $breakPoint) {
+        padding-left: $mainPaddingMobile;
+        padding-right: $mainPaddingMobile;
+    }
+
+    &__content {
+        background-color: white;
+        padding: 20px;
+        border-radius: $borderRadius;
+        min-height: $mainMinHeight;
         @media screen and (max-width: $breakPoint) {
-            padding-left: $mainPaddingMobile;
-            padding-right: $mainPaddingMobile;
+            min-height: $mainMinHeightMobile;
         }
     }
 
