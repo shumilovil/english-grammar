@@ -5,7 +5,8 @@
     width: 256px;
     overflow: auto;
     max-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
-    border-radius: 15px;
+    border-radius: $borderRadius;
+    z-index: 2;
     left: $mainPaddingDesktop;
     @media screen and (max-width: $breakPoint) {
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});
@@ -17,6 +18,7 @@
 }
 
 .overlay {
+    z-index: 1;
     position: absolute;
     width: 100%;        
     background-color: rgba(0, 0, 0, 0.7);

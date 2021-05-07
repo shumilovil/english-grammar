@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setCurrentCategory, setCurrentSubCategory } from '../../redux/mainReducer';
+import { setCurrentCategory, setCurrentSubcategory } from '../../redux/mainReducer';
 import { Card } from '../Card/Card';
 import './MainPage.scss';
 
@@ -11,7 +11,7 @@ export const MainPage = ({ categories }) => {
 
     useEffect(() => {
         dispatch(setCurrentCategory(null));
-        dispatch(setCurrentSubCategory(null));
+        dispatch(setCurrentSubcategory(null));
     });
 
     return (

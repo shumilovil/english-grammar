@@ -1,8 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export const AbcStreetCat = () => {
+
+    const currentCategory = useSelector(state => state.app.currentCategory);
+    const currentCategoryTitle = currentCategory && currentCategory.title;
+
     return (
-        <div>
+        <div className='abc-street-category'>
+            <h2>Welcome to {currentCategoryTitle}</h2>
             <ul>
                 <li>
                     Обучение младших школьников технике чтения на английском языке.

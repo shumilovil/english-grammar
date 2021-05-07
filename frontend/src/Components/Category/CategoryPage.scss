@@ -1,11 +1,5 @@
 @import "../../GlobalVars.scss";
 
-@mixin animation {
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
 .category {  
 
     &__big-btns {

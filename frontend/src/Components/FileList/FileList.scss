@@ -1,0 +1,36 @@
+@import "../../GlobalVars.scss";
+
+.ant-collapse {
+    border-radius: $borderRadius;
+}
+
+.ant-collapse > .ant-collapse-item:last-child,
+.ant-collapse > .ant-collapse-item:last-child > .ant-collapse-header {
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+}
+
+.ant-collapse-item:last-child > .ant-collapse-content {
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+}
+
+.files {
+    &__file-to-download {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include animation();
+        &:hover {
+            color: #1890ff;
+            svg path {
+                fill: #1890ff;
+                @include animation();
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        
+    }
+}

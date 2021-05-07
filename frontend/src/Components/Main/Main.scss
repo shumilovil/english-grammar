@@ -3,7 +3,7 @@
 .main {
     background-color: white;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: $borderRadius;
     min-height: $mainMinHeight;
     @media screen and (max-width: $breakPoint) {
         min-height: $mainMinHeightMobile;
@@ -41,5 +41,13 @@
     li {
         margin-bottom: 7px;
         text-align: justify;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: rgba(0, 0, 0, 0.85);
     }
 }

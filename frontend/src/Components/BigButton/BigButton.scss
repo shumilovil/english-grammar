@@ -1,14 +1,8 @@
 @import "../../GlobalVars.scss";
 
-@mixin animation {
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
 .big-button {
     border: solid 1px rgb(217, 217, 217);
-    border-radius: 15px;
+    border-radius: $borderRadius;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.85) !important;
     margin-top: 15px;

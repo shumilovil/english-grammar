@@ -105,5 +105,5 @@ export const mainReducer = (state = initialState, action) => {
 export const toggleMenuVisibility = () => ({ type: TOGGLE_MENU_VISIBILITY });
 export const hideMenu = () => ({ type: HIDE_MENU });
 export const setCurrentCategory = (category) => ({ type: SET_CURRENT_CATEGORY, category });
-export const setCurrentSubCategory = (subcategory) => ({ type: SET_CURRENT_SUBCATEGORY, subcategory });
+export const setCurrentSubcategory = (subcategory) => ({ type: SET_CURRENT_SUBCATEGORY, subcategory });
 export const setCurrentStaticPage = (staticPage) => ({ type: SET_CURRENT_STATIC_PAGE, staticPage });

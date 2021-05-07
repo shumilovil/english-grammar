@@ -90,11 +90,10 @@ export const AntMenu = ({ categories, subcategories }) => {
                                 {category.subcategoryIds.map(id => {
 
                                     // Define subcategory items
-                                    const subcategory = subcategories.find(subcategory => subcategory._id === id);
-                                    const subcategoryKey = `${category._id}_${subcategory._id}`;
+                                    const subcategory = subcategories.find(subcategory => subcategory._id === id);                                   
                                     const subcategoryUrl = `${category.url}${subcategory.url}`;
                                     return (
-                                        <Menu.Item key={subcategoryKey}>
+                                        <Menu.Item key={subcategory._id}>
                                             <Link to={subcategoryUrl}>{subcategory.title}</Link>
                                         </Menu.Item>
                                     );

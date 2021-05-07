@@ -1,5 +1,5 @@
 import React from 'react';
-import './BtnIcons.scss';
+import './ButtonIcons.scss';
 
 export const DownloadIcon = () => {
     return (

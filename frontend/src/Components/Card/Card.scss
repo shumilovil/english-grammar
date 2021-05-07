@@ -1,8 +1,10 @@
+@import "../../GlobalVars.scss";
+
 .course-card {
     text-align: center;
     max-width: 300px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius;
     margin-bottom: 20px;
     background-size: 100%;
     background-position: center;
@@ -28,8 +30,8 @@
         border-bottom: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
         border-left: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
         border-right: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
         // background-color: #716b6b12;
 
         color: rgba(0, 0, 0, 0.85);
