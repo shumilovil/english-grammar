@@ -22,5 +22,12 @@ export const pagesContent = {
             'Uchitelyam': <TeachersSubcat />,
             'Files': <FileList />
         }
+    },
+    'Questions': {
+        // category: <GrammarSmileCat />,
+        subcategory: {
+            // 'Uchitelyam': <TeachersSubcat />,
+            'Files': <FileList />
+        }
     }
 };
