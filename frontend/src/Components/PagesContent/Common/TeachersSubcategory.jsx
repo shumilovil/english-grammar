@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { BigButton } from '../../BigButton/BigButton';
 import { icons } from '../../Icons/ButtonIcons/Aggregated';
 
-export const TeachersSubcat = () => {
+export const TeachersSubcategory = () => {
 
     const currentCategory = useSelector(state => state.app.currentCategory);
     const currentCategoryTitle = currentCategory && currentCategory.title;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-export const GrammarSmileCat = () => {
+export const GrammarSmileCategory = () => {
 
     const currentCategory = useSelector(state => state.app.currentCategory);
     const currentCategoryTitle = currentCategory && currentCategory.title;
