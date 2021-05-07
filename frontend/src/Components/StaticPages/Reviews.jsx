@@ -8,7 +8,7 @@ export const Reviews = () => {
     const { url } = useRouteMatch();
     const dispatch = useDispatch();
     
-    useEffect(() => dispatch(setCurrentStaticPage({url, name: 'Отзывы'})));
+    useEffect(() => dispatch(setCurrentStaticPage({url, title: 'Отзывы'})));
 
     return (
         <h2>Отзывы</h2>

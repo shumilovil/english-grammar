@@ -16,6 +16,10 @@
 }
 
 .files {
+    a {
+        color: rgba(0, 0, 0, 0.85);
+    }
+
     &__file-to-download {
         display: flex;
         align-items: center;
