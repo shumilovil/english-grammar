@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 export const Header = () => {    
 
     const dispatch = useDispatch();
+    
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
 
     const toggleMenu = () => {

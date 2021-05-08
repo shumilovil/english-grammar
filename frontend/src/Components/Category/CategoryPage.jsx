@@ -9,8 +9,8 @@ import './CategoryPage.scss';
 export const CategoryPage = ({ availableSubcategories }) => {
 
     const dispatch = useDispatch();
+    
     const currentCategory = useSelector(state => state.app.currentCategory);
-
     const categoryContent = currentCategory
         && pagesContent[currentCategory.name]
         && pagesContent[currentCategory.name].category;

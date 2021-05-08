@@ -11,11 +11,12 @@ import { SubcategoryPage } from './SubcategoryPage';
 const Category = ({ categories, subcategories }) => {
 
     console.log('Category COMPONENT');
+    const dispatch = useDispatch();
 
     const currentCategory = useCatOrSubcat(categories, 'category');
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
     const { path } = useRouteMatch();
-    const dispatch = useDispatch();
+    
 
     useEffect(() => {
         if (currentCategory) {

@@ -5,8 +5,9 @@ import { setCurrentStaticPage } from '../../redux/mainReducer';
 
 const Contacts = () => {
 
-    const { url } = useRouteMatch();
     const dispatch = useDispatch();
+
+    const { url } = useRouteMatch();    
 
     useEffect(() => dispatch(setCurrentStaticPage({ url, title: 'Контакты', name: 'Contacts' })));
 

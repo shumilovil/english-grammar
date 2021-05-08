@@ -28,6 +28,7 @@ export const AntMenu = ({ categories, subcategories }) => {
     //     setTheme(value ? 'dark' : 'light');
     // };
     const dispatch = useDispatch();
+    
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
 
     const toggleMenu = () => {
