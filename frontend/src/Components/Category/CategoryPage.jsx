@@ -13,7 +13,7 @@ export const CategoryPage = ({ currentCategory, availableSubcategories }) => {
     const categoryContent = pagesContent[currentCategory.name]
         && pagesContent[currentCategory.name].category;
 
-    useEffect(() => dispatch(setCurrentSubcategory(null)));
+    useEffect(() => dispatch(setCurrentSubcategory(null)));    
 
     return (
         <div className='category'>

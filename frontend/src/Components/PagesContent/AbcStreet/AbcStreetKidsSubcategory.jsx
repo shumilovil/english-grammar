@@ -1,4 +1,5 @@
 import React from 'react';
+import './AbcStreetKidsSubcategory.scss';
 
 export const AbcStreetKidsSubcategory = () => {
     return (

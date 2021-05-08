@@ -13,13 +13,13 @@ const Category = ({ categories, subcategories }) => {
     const currentCategory = useCatOrSubcat(categories, 'category');
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
     const { path } = useRouteMatch();
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();    
 
     useEffect(() => {
         if (currentCategory) {
             dispatch(setCurrentCategory(currentCategory));
         }
-    });
+    });    
 
     if (!currentCategory) {
         return <PageNotFound />;

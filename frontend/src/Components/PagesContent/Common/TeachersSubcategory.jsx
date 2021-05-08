@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { BigButton } from '../../BigButton/BigButton';
 import { icons } from '../../Icons/ButtonIcons/Aggregated';
+import './TeachersSubcategory.scss';
 
 export const TeachersSubcategory = () => {
 
