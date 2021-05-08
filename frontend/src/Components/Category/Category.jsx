@@ -10,16 +10,18 @@ import { SubcategoryPage } from './SubcategoryPage';
 
 const Category = ({ categories, subcategories }) => {
 
+    console.log('Category COMPONENT');
+
     const currentCategory = useCatOrSubcat(categories, 'category');
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
     const { path } = useRouteMatch();
-    const dispatch = useDispatch();    
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (currentCategory) {
             dispatch(setCurrentCategory(currentCategory));
         }
-    });    
+    }, [currentCategory, dispatch]);
 
     if (!currentCategory) {
         return <PageNotFound />;
@@ -29,13 +31,12 @@ const Category = ({ categories, subcategories }) => {
         <Switch>
 
             <Route exact path={path}>
-                <CategoryPage                    
+                <CategoryPage
                     availableSubcategories={availableSubcategories} />
             </Route>
 
             <Route path={`${path}/:subcategory`}>
                 <SubcategoryPage
-                    currentCategory={currentCategory}
                     availableSubcategories={availableSubcategories} />
             </Route>
 

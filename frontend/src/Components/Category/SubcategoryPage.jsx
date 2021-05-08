@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useCatOrSubcat } from '../../hooks/category.hooks';
 import { useScrollToTop } from '../../hooks/scroll.hooks';
 import { setCurrentSubcategory } from '../../redux/mainReducer';
 import { PageNotFound } from '../PageNotFound/PageNotFound';
 import { pagesContent } from '../PagesContent/Aggregated';
 
-export const SubcategoryPage = ({ availableSubcategories, currentCategory }) => {
+export const SubcategoryPage = ({ availableSubcategories }) => {
 
-    const currentSubcategory = useCatOrSubcat(availableSubcategories, 'subcategory');    
+    const currentCategory = useSelector(state => state.app.currentCategory);
+    const currentSubcategory = useCatOrSubcat(availableSubcategories, 'subcategory');
 
     const dispatch = useDispatch();
 
@@ -16,7 +17,7 @@ export const SubcategoryPage = ({ availableSubcategories, currentCategory }) => 
         if (currentSubcategory) {
             dispatch(setCurrentSubcategory(currentSubcategory));
         }
-    });
+    }, [currentSubcategory, dispatch]);
 
     useScrollToTop();
 
@@ -24,7 +25,8 @@ export const SubcategoryPage = ({ availableSubcategories, currentCategory }) => 
         return <PageNotFound />;
     }
 
-    const subcategoryContent = pagesContent[currentCategory.name]
+    const subcategoryContent = currentCategory
+        && pagesContent[currentCategory.name]
         && pagesContent[currentCategory.name].subcategory
         && pagesContent[currentCategory.name].subcategory[currentSubcategory.name];
 
