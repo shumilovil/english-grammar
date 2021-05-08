@@ -16,6 +16,8 @@ export const FileList = () => {
 
     const currentCategoryTitle = currentCategory && currentCategory.title;
 
+    if (!currentCategoryTitle) return null;
+
     return (
         <div className='files'>
             <h2>{currentCategoryTitle} - Файлы для скачивания</h2>

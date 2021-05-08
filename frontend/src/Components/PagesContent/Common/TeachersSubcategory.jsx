@@ -8,6 +8,8 @@ export const TeachersSubcategory = () => {
     const currentCategory = useSelector(state => state.app.currentCategory);
     const currentCategoryTitle = currentCategory && currentCategory.title;
 
+    if (!currentCategoryTitle) return null;
+
     const icon = icons['Files'];
 
     return (

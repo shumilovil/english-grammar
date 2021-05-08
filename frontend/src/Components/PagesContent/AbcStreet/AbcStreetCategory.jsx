@@ -6,6 +6,8 @@ export const AbcStreetCategory = () => {
     const currentCategory = useSelector(state => state.app.currentCategory);
     const currentCategoryTitle = currentCategory && currentCategory.title;
 
+    if (!currentCategoryTitle) return null;
+
     return (
         <div className='abc-street-category'>
             <h2>Welcome to {currentCategoryTitle}</h2>

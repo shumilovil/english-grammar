@@ -7,7 +7,7 @@ import { setCurrentCategory } from '../../redux/mainReducer';
 import { CategoryPage } from './CategoryPage';
 import { SubcategoryPage } from './SubcategoryPage';
 
-export const Category = ({ categories, subcategories }) => {
+const Category = ({ categories, subcategories }) => {
 
     const currentCategory = useCatOrSubcat(categories, 'category');
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
@@ -42,3 +42,5 @@ export const Category = ({ categories, subcategories }) => {
         </Switch>
     );
 };
+
+export default Category;
