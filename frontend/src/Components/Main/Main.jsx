@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 import { Suspense } from 'react';
 import { Route, Switch } from 'react-router';
 import { AntBreadCrumbs } from '../Breadcrumbs/Breadcrumbs';
+import { Preloader } from '../Preloader/Preloader';
 // import { Category } from '../Category/Category';
 // import { Contacts } from '../StaticPages/Contacts';
 // import { Reviews } from '../StaticPages/Reviews';
@@ -22,7 +23,7 @@ export const Main = ({ categories, subcategories }) => {
                 <AntBreadCrumbs />
             </div>
             <div className='main__content'>
-                <Suspense fallback={<div>Загрузка...</div>}>
+                <Suspense fallback={<Preloader />}>
                     <Switch>
 
                         <Route exact path='/'>

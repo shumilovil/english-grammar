@@ -15,6 +15,7 @@
     &__content {
         background-color: white;
         padding: 20px;
+        position: relative;
         border-radius: $borderRadius;
         min-height: $mainMinHeight;
         @media screen and (max-width: $breakPoint) {
