@@ -29,8 +29,7 @@ const Category = ({ categories, subcategories }) => {
         <Switch>
 
             <Route exact path={path}>
-                <CategoryPage
-                    currentCategory={currentCategory}
+                <CategoryPage                    
                     availableSubcategories={availableSubcategories} />
             </Route>
 

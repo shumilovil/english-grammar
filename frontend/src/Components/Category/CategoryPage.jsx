@@ -1,19 +1,23 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentSubcategory } from '../../redux/mainReducer';
 import { BigButton } from '../BigButton/BigButton';
 import { icons } from '../Icons/ButtonIcons/Aggregated';
 import { pagesContent } from '../PagesContent/Aggregated';
 import './CategoryPage.scss';
 
-export const CategoryPage = ({ currentCategory, availableSubcategories }) => {
+export const CategoryPage = ({ availableSubcategories }) => {
 
     const dispatch = useDispatch();
+    const currentCategory = useSelector(state => state.app.currentCategory);
 
-    const categoryContent = pagesContent[currentCategory.name]
+    const categoryContent = currentCategory
+        && pagesContent[currentCategory.name]
         && pagesContent[currentCategory.name].category;
 
-    useEffect(() => dispatch(setCurrentSubcategory(null)));    
+    useEffect(() => dispatch(setCurrentSubcategory(null)));
+
+    if (!currentCategory) return null;
 
     return (
         <div className='category'>
