@@ -4,6 +4,7 @@ import { Route, Switch, useRouteMatch } from 'react-router';
 import { useCatOrSubcat } from '../../hooks/category.hooks';
 import { useAvailableSubcat } from '../../hooks/subcategory.hooks';
 import { setCurrentCategory } from '../../redux/mainReducer';
+import { PageNotFound } from '../PageNotFound/PageNotFound';
 import { CategoryPage } from './CategoryPage';
 import { SubcategoryPage } from './SubcategoryPage';
 
@@ -21,7 +22,7 @@ const Category = ({ categories, subcategories }) => {
     });
 
     if (!currentCategory) {
-        return <div>404 NOT FOUND</div>;
+        return <PageNotFound />;
     }
 
     return (
