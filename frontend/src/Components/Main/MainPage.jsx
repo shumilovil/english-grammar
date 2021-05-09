@@ -19,9 +19,7 @@ export const MainPage = ({ categories }) => {
             <div className='main-page__cards'>
                 {categories.map(category => {
                     return (
-                        <Link key={category._id} to={category.url}>
-                            <Card category={category} />
-                        </Link>
+                        <Card category={category} />
                     );
                 })}
             </div>
