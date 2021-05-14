@@ -7,11 +7,9 @@ import './TeachersSubcategory.scss';
 export const TeachersSubcategory = () => {
 
     const currentCategory = useSelector(state => state.app.currentCategory);
-    const currentCategoryTitle = currentCategory && currentCategory.title;
+    const currentCategoryTitle = currentCategory && currentCategory.title;   
 
-    // if (!currentCategoryTitle) return null;
-
-    const icon = icons['Files'];
+    const icon = icons['files'];
 
     return (
         <div className='abc-street-teachers-subcat'>

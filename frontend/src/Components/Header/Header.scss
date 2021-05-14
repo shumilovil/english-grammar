@@ -1,8 +1,7 @@
 @import '../../GlobalVars.scss';
 
-.header {
+.header {   
     
-    // background-color: #009688;
     background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../../images/header_background.jpg");
     background-size: auto 100%;
 
@@ -27,20 +26,7 @@
             padding-left: $mainPaddingMobile;
             padding-right: $mainPaddingMobile;
             height: $headerHeightMobile;
-        }
-
-        // .anticon.anticon-menu {
-        //     font-size: 24px;
-        //     color: white;
-        //     cursor: pointer;
-        //     position: absolute;
-        //     left: $mainPaddingDesktop;
-
-        //     @media screen and (max-width: $breakPoint) {
-        //         left: $mainPaddingMobile;
-        //         font-size: 20px;
-        //     }
-        // }
+        }       
     }
 
     &__logo {

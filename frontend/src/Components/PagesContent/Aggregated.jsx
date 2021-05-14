@@ -26,7 +26,7 @@ export const pagesContent = {
     'questions': {
         // category: <GrammarSmileCategory />,
         subcategory: {
-            // 'Uchitelyam': <TeachersSubcategory />,
+            // 'uchitelyam': <TeachersSubcategory />,
             'files': <FileList />
         }
     }

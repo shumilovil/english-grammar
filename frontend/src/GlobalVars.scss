@@ -9,6 +9,8 @@ $mainPaddingDesktop: 40px;
 $mainPaddingMobile: 15px;
 $maxAppWidth: 1440px;
 $borderRadius: 15px;
+$grey: #aaa8a8;
+$lightGrey: rgb(217, 217, 217);
 
 @mixin animation {
     transition-property: all;

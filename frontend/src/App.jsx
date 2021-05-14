@@ -4,15 +4,11 @@ import { Main } from './components/Main/Main';
 import { Footer } from './components/Footer/Footer';
 import { AntMenu } from './components/Menu/Menu';
 import { useSelector } from 'react-redux';
-// import { getCategoryUrls } from './CommonHelpers/CommonHelpers';
-// import { useMemo } from 'react';
 
 function App() {
 
     const categories = useSelector(state => state.app.categories);
-    const subcategories = useSelector(state => state.app.subcategories);
-
-    // const categoryUrls = useMemo(() => getCategoryUrls(categories), [categories]);
+    const subcategories = useSelector(state => state.app.subcategories);    
 
     if (!categories || !subcategories) return null; // should be loading
 

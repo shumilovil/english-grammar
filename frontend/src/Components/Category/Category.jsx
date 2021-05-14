@@ -15,8 +15,7 @@ const Category = ({ categories, subcategories }) => {
 
     const currentCategory = useCatOrSubcat(categories, 'category');
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
-    const { path } = useRouteMatch();
-    
+    const { path } = useRouteMatch();    
 
     useEffect(() => {
         if (currentCategory) {

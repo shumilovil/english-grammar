@@ -1,5 +1,8 @@
 @import "../../GlobalVars.scss";
 
+$greyBorder: solid 1px $grey;
+$lightGreyBorder: solid 1px $lightGrey;
+
 .course-card {
     text-align: center;
     max-width: 300px;
@@ -27,14 +30,12 @@
     }
     &__description {
         margin-bottom: 0;
-        // margin-top: 15px;
         padding: 12px 10px 15px 10px;
-        border-bottom: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
-        border-left: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
-        border-right: solid 1px rgb(217, 217, 217);; //#f0f0f0 //lightgrey
+        border-bottom: $lightGreyBorder;
+        border-left: $lightGreyBorder;
+        border-right: $lightGreyBorder;
         border-bottom-left-radius: $borderRadius;
         border-bottom-right-radius: $borderRadius;
-        // background-color: #716b6b12;
 
         color: rgba(0, 0, 0, 0.85);
 
@@ -46,10 +47,9 @@
 
 .course-card:hover {
     .course-card__description {
-        // background-color: #716b6b12;
-        border-bottom: solid 1px #aaa8a8; //#f0f0f0
-        border-left: solid 1px #aaa8a8; //#f0f0f0
-        border-right: solid 1px #aaa8a8; //#f0f0f0
+        border-bottom: $greyBorder;
+        border-left: $greyBorder;
+        border-right: $greyBorder;
    
     }
 }

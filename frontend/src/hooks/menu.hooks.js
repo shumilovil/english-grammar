@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-
 export const useMenuVisibility = (isMenuVisible) => {
     useEffect(() => {
         if (isMenuVisible) {
@@ -9,4 +8,4 @@ export const useMenuVisibility = (isMenuVisible) => {
             document.body.classList.remove('menu-is-open');
         }
     }, [isMenuVisible]);
-}
+};

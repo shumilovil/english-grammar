@@ -8,10 +8,10 @@ import { MenuIcon } from '../Icons/HeaderIcons/MenuIcon';
 import { Link } from 'react-router-dom';
 
 
-export const Header = () => {    
+export const Header = () => {
 
     const dispatch = useDispatch();
-    
+
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
 
     const toggleMenu = () => {
@@ -25,17 +25,18 @@ export const Header = () => {
     return (
         <header className='header'>
             <div className='header__content'>
-                <div className='header__menu-toggle'
-                    onClick={toggleMenu}
-                >
+
+                <div className='header__menu-toggle' onClick={toggleMenu}>
                     {isMenuVisible ? <CloseIcon /> : <MenuIcon />}
                 </div>
+
                 <div className='header__logo' onClick={logoClickHandler}>
                     <Link to='/'>
                         <h1 className='header__logo-title'>English grammar</h1>
                         <p className='header__logo-text'>by Natalya Shumilova</p>
                     </Link>
                 </div>
+                
             </div>
         </header>
     );

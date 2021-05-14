@@ -20,19 +20,9 @@
     @include animation();
 
     &:hover {
-        // background-color: #1890ff;
-        border-color: #aaa8a8;
-        // color: white;
-
-        svg path {
-            // fill: white;
-        }
+        border-color: #aaa8a8;        
     }
-
-    // &:not(:last-child) {
-    //     margin-right: 15px;
-    // }
-
+  
     p {
         margin-bottom: 0;
         margin-left: 10px;

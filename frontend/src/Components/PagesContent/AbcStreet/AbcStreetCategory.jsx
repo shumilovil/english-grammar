@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 export const AbcStreetCategory = () => {
 
     const currentCategory = useSelector(state => state.app.currentCategory);
-    const currentCategoryTitle = currentCategory && currentCategory.title;
-
-    // if (!currentCategoryTitle) return null;
+    const currentCategoryTitle = currentCategory && currentCategory.title;   
 
     return (
         <div className='abc-street-category'>

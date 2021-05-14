@@ -10,13 +10,7 @@ const { Panel } = Collapse;
 export const FileList = () => {
 
     const currentCategory = useSelector(state => state.app.currentCategory);
-    // const currentSubcategory = useSelector(state => state.app.currentSubcategory);    
-
-    // if (!currentCategory || !currentSubcategory) return null;
-
     const currentCategoryTitle = currentCategory && currentCategory.title;
-
-    // if (!currentCategoryTitle) return null;
 
     return (
         <div className='files'>

@@ -3,9 +3,6 @@ import { Suspense } from 'react';
 import { Route, Switch } from 'react-router';
 import { AntBreadCrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { Preloader } from '../Preloader/Preloader';
-// import { Category } from '../Category/Category';
-// import { Contacts } from '../StaticPages/Contacts';
-// import { Reviews } from '../StaticPages/Reviews';
 import './Main.scss';
 import { MainPage } from './MainPage';
 
