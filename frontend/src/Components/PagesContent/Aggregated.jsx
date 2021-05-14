@@ -8,26 +8,26 @@ import { GrammarSmileCategory } from "./GrammarSmile/GrammarSmileCategory";
 
 // String keys match the category names in state
 export const pagesContent = {
-    'ABC Street': {
+    'abc street': {
         category: <AbcStreetCategory />,
         subcategory: {
-            'Detyam': <AbcStreetKidsSubcategory />,
-            'Uchitelyam': <TeachersSubcategory />,
-            'Files': <FileList />
+            'detyam': <AbcStreetKidsSubcategory />,
+            'uchitelyam': <TeachersSubcategory />,
+            'files': <FileList />
         }
     },
-    'Grammar Smile': {
+    'grammar smile': {
         category: <GrammarSmileCategory />,
         subcategory: {
-            'Uchitelyam': <TeachersSubcategory />,
-            'Files': <FileList />
+            'uchitelyam': <TeachersSubcategory />,
+            'files': <FileList />
         }
     },
-    'Questions': {
+    'questions': {
         // category: <GrammarSmileCategory />,
         subcategory: {
             // 'Uchitelyam': <TeachersSubcategory />,
-            'Files': <FileList />
+            'files': <FileList />
         }
     }
 };

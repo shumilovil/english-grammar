@@ -9,7 +9,7 @@ const Contacts = () => {
 
     const { url } = useRouteMatch();    
 
-    useEffect(() => dispatch(setCurrentStaticPage({ url, title: 'Контакты', name: 'Contacts' })));
+    useEffect(() => dispatch(setCurrentStaticPage({ url, title: 'Контакты', name: 'contacts' })));
 
     return (
         <h2>Контакты</h2>

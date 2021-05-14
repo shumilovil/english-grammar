@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenuVisibility } from '../../redux/mainReducer';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useMenuVisibility } from '../../hooks/menu.hooks';
 
 const { SubMenu } = Menu;
 
@@ -39,16 +40,7 @@ export const AntMenu = ({ categories, subcategories }) => {
         if (target.className === 'overlay') toggleMenu();
     };
 
-
-
-
-    useEffect(() => {
-        if (isMenuVisible) {
-            document.body.classList.add('menu-is-open');
-        } else {
-            document.body.classList.remove('menu-is-open');
-        }
-    }, [isMenuVisible]);
+    useMenuVisibility(isMenuVisible);
 
 
     // if (!isMenuVisible) return null;
@@ -143,11 +135,11 @@ export const AntMenu = ({ categories, subcategories }) => {
                     </Menu.Item> */}
                     <Menu.Divider />
 
-                    <Menu.Item key='Otzyvy' >
+                    <Menu.Item key='otzyvy' >
                         <Link to='/otzyvy'>Отзывы</Link>
                     </Menu.Item>
 
-                    <Menu.Item key='Contacts'>
+                    <Menu.Item key='contacts'>
                         <Link to='/contacts'>Контакты</Link>
                     </Menu.Item>
 

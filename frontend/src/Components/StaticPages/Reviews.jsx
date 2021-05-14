@@ -9,7 +9,7 @@ const Reviews = () => {
 
     const { url } = useRouteMatch();    
 
-    useEffect(() => dispatch(setCurrentStaticPage({ url, title: 'Отзывы', name: 'Otzyvy' })));
+    useEffect(() => dispatch(setCurrentStaticPage({ url, title: 'Отзывы', name: 'otzyvy' })));
 
     return (
         <h2>Отзывы</h2>
