@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 
 export const useCatOrSubcat = (categories, categoryType) => {
@@ -11,3 +12,10 @@ export const useCatOrSubcat = (categories, categoryType) => {
     console.log(`current${categoryType}`, currentCategory);
     return currentCategory;
 };
+
+export const useCategoryTitle = () => {
+    return useSelector(state => {
+        const currentCategory = state.app.currentCategory;
+        return currentCategory && currentCategory.title;
+    });   
+}

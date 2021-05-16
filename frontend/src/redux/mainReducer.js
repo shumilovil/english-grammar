@@ -29,7 +29,7 @@ const initialState = {
             title: 'Составление вопросов',
             url: '/sostavlenie-voprosov',
             description: 'Построение всех видов вопросов с помощью опорных схем',
-            subcategoryIds: [203]
+            subcategoryIds: [201, 202, 203]
         }
     ],
     subcategories: [

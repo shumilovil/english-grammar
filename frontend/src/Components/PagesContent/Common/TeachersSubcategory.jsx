@@ -1,12 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useCategoryTitle } from '../../../hooks/category.hooks';
 import { BigButton } from '../../BigButton/BigButton';
 import { icons } from '../../Icons/ButtonIcons/Aggregated';
 
 export const TeachersSubcategory = () => {
 
-    const currentCategory = useSelector(state => state.app.currentCategory);
-    const currentCategoryTitle = currentCategory && currentCategory.title;   
+    const currentCategoryTitle = useCategoryTitle();
 
     const icon = icons['files'];
 

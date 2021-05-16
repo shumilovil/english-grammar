@@ -1,16 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Collapse } from 'antd';
 import './FileList.scss';
 import { DownloadIcon } from '../Icons/ButtonIcons/DownloadIcon';
 import { Link } from 'react-router-dom';
+import { useCategoryTitle } from '../../hooks/category.hooks';
 const { Panel } = Collapse;
 
 
 export const FileList = () => {
 
-    const currentCategory = useSelector(state => state.app.currentCategory);
-    const currentCategoryTitle = currentCategory && currentCategory.title;
+    const currentCategoryTitle = useCategoryTitle();
 
     return (
         <div className='files'>

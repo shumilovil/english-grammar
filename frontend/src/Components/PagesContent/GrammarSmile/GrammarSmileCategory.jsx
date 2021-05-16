@@ -1,10 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useCategoryTitle } from '../../../hooks/category.hooks';
 
 export const GrammarSmileCategory = () => {
 
-    const currentCategory = useSelector(state => state.app.currentCategory);
-    const currentCategoryTitle = currentCategory && currentCategory.title;
+    const currentCategoryTitle = useCategoryTitle();
 
     return (
         <div className='grammar-smile-category'>
