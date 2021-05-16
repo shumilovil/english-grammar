@@ -5,6 +5,7 @@ import { useScrollToTop } from '../../hooks/scroll.hooks';
 import { setCurrentSubcategory } from '../../redux/mainReducer';
 import { PageNotFound } from '../PageNotFound/PageNotFound';
 import { pagesContent } from '../PagesContent/Aggregated';
+import './SubcategoryPage.scss';
 
 export const SubcategoryPage = ({ availableSubcategories }) => {
 
