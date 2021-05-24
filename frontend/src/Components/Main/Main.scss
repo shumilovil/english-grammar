@@ -41,6 +41,10 @@
 
     li {
         margin-bottom: 7px;
+        text-align: justify;
+        @media screen and (max-width: $breakPoint) {
+            text-align: left;
+        }
     }
 
     p {

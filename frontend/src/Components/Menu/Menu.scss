@@ -11,7 +11,7 @@
     @media screen and (max-width: $breakPoint) {
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});
         left: $mainPaddingMobile;
-    } 
+    }
     @media screen and (min-width: $maxAppWidth) {
         left: calc((100vw - #{$maxAppWidth} + #{$mainPaddingDesktop} * 2) / 2);
     }
@@ -20,14 +20,19 @@
 .overlay {
     z-index: 1;
     position: absolute;
-    width: 100%;        
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     height: calc(100% - #{$headerHeight});
     @media screen and (max-width: $breakPoint) {
         height: calc(100% - #{$headerHeightMobile});
     }
-    &-hidden {
-        display: none;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0s;
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0s 0.3s;
     }
 }
 
@@ -36,6 +41,5 @@ body {
         @media screen and (max-width: $breakPoint) {
             overflow-y: hidden;
         }
-        
     }
 }

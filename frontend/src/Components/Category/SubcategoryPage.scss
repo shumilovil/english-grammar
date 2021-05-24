@@ -1,5 +1,10 @@
+@import "../../GlobalVars.scss";
+
 .subcategory {
     p {
         text-align: justify;
+        @media screen and (max-width: $breakPoint) {
+            text-align: left;
+        }
     }
 }
