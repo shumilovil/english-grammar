@@ -12,7 +12,7 @@ export const Header = () => {
 
     const dispatch = useDispatch();
 
-    const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
+    const isMenuVisible = useSelector(state => state.app.isMenuVisible);
 
     const toggleMenu = () => {
         dispatch(toggleMenuVisibility());

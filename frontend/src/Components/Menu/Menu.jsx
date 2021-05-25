@@ -12,10 +12,10 @@ export const AntMenu = ({ categories, subcategories }) => {
 
     const dispatch = useDispatch();
 
-    const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
-    const currentCategory = useSelector((state) => state.app.currentCategory);
-    const currentSubCategory = useSelector((state) => state.app.currentSubcategory);
-    const currentStaticPage = useSelector((state) => state.app.currentStaticPage);
+    const isMenuVisible = useSelector(state => state.app.isMenuVisible);
+    const currentCategory = useSelector(state => state.app.currentCategory);
+    const currentSubCategory = useSelector(state => state.app.currentSubcategory);
+    const currentStaticPage = useSelector(state => state.app.currentStaticPage);
 
     const [openKeys, setOpenKeys] = useState([]);
     const [selectedKeys, setSelectedKeys] = useState([]);
