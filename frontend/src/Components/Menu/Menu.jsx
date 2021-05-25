@@ -46,7 +46,7 @@ export const AntMenu = ({ categories, subcategories }) => {
 
     // Sets active menu items according to the menu usage
     // Only one submenu item can be open at a time
-    const onOpenChange = keys => {
+    const onOpenChange = (keys) => {
         const latestOpenKey = keys.find(key => !openKeys.includes(key));
         setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
         setSelectedKeys([]);
