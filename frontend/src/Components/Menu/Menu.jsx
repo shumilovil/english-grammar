@@ -20,7 +20,12 @@ export const AntMenu = ({ categories, subcategories }) => {
     const [openKeys, setOpenKeys] = useState([]);
     const [selectedKeys, setSelectedKeys] = useState([]);
 
-    // Sets active menu items according to the currentPage change
+    const submenuKeys = [];
+    categories.forEach(category => {
+        submenuKeys.push(`${category._id}`);
+    });
+
+    // Sets active menu items according to the current page change
     useMenuSelectedItems(
         currentCategory,
         currentSubCategory,
@@ -40,22 +45,12 @@ export const AntMenu = ({ categories, subcategories }) => {
     };
 
     // Sets active menu items according to the menu usage
-    const onOpenChange = (openKeys) => {
-        setOpenKeys(openKeys);
+    // Only one submenu item can be open at a time
+    const onOpenChange = keys => {
+        const latestOpenKey = keys.find(key => !openKeys.includes(key));
+        setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+        setSelectedKeys([]);
     };
-
-    // const resetSelectedItems = {
-    //     // selectedKeys: [],
-    //     openKeys: []
-    // };
-
-    // if (isMenuVisible) {
-    //     for (let key in resetSelectedItems) {
-    //         delete resetSelectedItems[key];
-    //     }
-    // }
-
-
 
     return (
         <div className={isMenuVisible ? 'overlay' : 'overlay hidden'}
