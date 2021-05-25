@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'antd';
 import './Menu.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenuVisibility } from '../../redux/mainReducer';
 import { Link } from 'react-router-dom';
-import { useMenuVisibility } from '../../hooks/menu.hooks';
+import { useMenuSelectedItems, useMenuVisibility } from '../../hooks/menu.hooks';
 
 const { SubMenu } = Menu;
 
@@ -13,6 +13,23 @@ export const AntMenu = ({ categories, subcategories }) => {
     const dispatch = useDispatch();
 
     const isMenuVisible = useSelector((state) => state.app.isMenuVisible);
+    const currentCategory = useSelector((state) => state.app.currentCategory);
+    const currentSubCategory = useSelector((state) => state.app.currentSubcategory);
+    const currentStaticPage = useSelector((state) => state.app.currentStaticPage);
+
+    const [openKeys, setOpenKeys] = useState([]);
+    const [selectedKeys, setSelectedKeys] = useState([]);
+
+    // Sets active menu items according to the currentPage change
+    useMenuSelectedItems(
+        currentCategory,
+        currentSubCategory,
+        currentStaticPage,
+        setOpenKeys,
+        setSelectedKeys
+    );
+
+    useMenuVisibility(isMenuVisible);
 
     const toggleMenu = () => {
         dispatch(toggleMenuVisibility());
@@ -22,18 +39,23 @@ export const AntMenu = ({ categories, subcategories }) => {
         if (target.className === 'overlay') toggleMenu();
     };
 
-    useMenuVisibility(isMenuVisible);
-
-    const resetSelectedItems = {
-        selectedKeys: [],
-        openKeys: []
+    // Sets active menu items according to the menu usage
+    const onOpenChange = (openKeys) => {
+        setOpenKeys(openKeys);
     };
 
-    if (isMenuVisible) {
-        for (let key in resetSelectedItems) {
-            delete resetSelectedItems[key];
-        }
-    }
+    // const resetSelectedItems = {
+    //     // selectedKeys: [],
+    //     openKeys: []
+    // };
+
+    // if (isMenuVisible) {
+    //     for (let key in resetSelectedItems) {
+    //         delete resetSelectedItems[key];
+    //     }
+    // }
+
+
 
     return (
         <div className={isMenuVisible ? 'overlay' : 'overlay hidden'}
@@ -44,7 +66,9 @@ export const AntMenu = ({ categories, subcategories }) => {
                     onClick={toggleMenu}
                     mode='inline'
                     theme='light'
-                    {...resetSelectedItems}>
+                    openKeys={openKeys}
+                    selectedKeys={selectedKeys}
+                    onOpenChange={onOpenChange}>
 
                     {categories.map(category => {
 
@@ -86,7 +110,7 @@ export const AntMenu = ({ categories, subcategories }) => {
 
                 </Menu>
             </div>
-            
+
         </div>
     );
 };

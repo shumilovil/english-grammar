@@ -18,4 +18,4 @@ export const useCategoryTitle = () => {
         const currentCategory = state.app.currentCategory;
         return currentCategory && currentCategory.title;
     });   
-}
+};
