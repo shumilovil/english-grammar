@@ -26,7 +26,7 @@ export const Header = () => {
         <header className='header'>
             <div className='header__content'>
 
-                <div className='header__menu-toggle' onClick={toggleMenu}>
+                <div className='header__menu-toggle' onClick={toggleMenu} data-testid='menu-toggle-test'>
                     {isMenuVisible ? <CloseIcon /> : <MenuIcon />}
                 </div>
 

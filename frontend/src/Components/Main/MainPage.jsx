@@ -14,7 +14,7 @@ export const MainPage = ({ categories }) => {
     });
 
     return (
-        <div className='main-page'>
+        <div className='main-page' data-testid='main-page-test'>
             <div className='main-page__cards'>
                 {categories.map(category => {
                     return (

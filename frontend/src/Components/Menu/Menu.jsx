@@ -54,7 +54,8 @@ export const AntMenu = ({ categories, subcategories }) => {
 
     return (
         <div className={isMenuVisible ? 'overlay' : 'overlay hidden'}
-            onClick={handleOverlay}>
+            onClick={handleOverlay}
+            data-testid='menu-test'>
 
             <div className='menu'>
                 <Menu
