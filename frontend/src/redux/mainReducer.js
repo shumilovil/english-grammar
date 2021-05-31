@@ -1,10 +1,10 @@
-const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
-const HIDE_MENU = 'HIDE_MENU';
-const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY';
-const SET_CURRENT_SUBCATEGORY = 'SET_CURRENT_SUBCATEGORY';
-const SET_CURRENT_STATIC_PAGE = 'SET_CURRENT_STATIC_PAGE';
+export const TOGGLE_MENU_VISIBILITY = 'TOGGLE_MENU_VISIBILITY';
+export const HIDE_MENU = 'HIDE_MENU';
+export const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY';
+export const SET_CURRENT_SUBCATEGORY = 'SET_CURRENT_SUBCATEGORY';
+export const SET_CURRENT_STATIC_PAGE = 'SET_CURRENT_STATIC_PAGE';
 
-const initialState = {
+export const initialState = {
     isMenuVisible: false,
     categories: [
         {
@@ -37,19 +37,19 @@ const initialState = {
             _id: 201,
             name: 'detyam',
             title: 'Детям',
-            url: '/detyam',
+            url: '/detyam'
         },
         {
             _id: 202,
             name: 'uchitelyam',
             title: 'Учителям',
-            url: '/uchitelyam',
+            url: '/uchitelyam'
         },
         {
             _id: 203,
             name: 'files',
             title: 'Файлы',
-            url: '/files',
+            url: '/files'
         }
     ],
     currentCategory: null,
@@ -99,8 +99,6 @@ export const mainReducer = (state = initialState, action) => {
     };
 
 };
-
-
 
 export const toggleMenuVisibility = () => ({ type: TOGGLE_MENU_VISIBILITY });
 export const hideMenu = () => ({ type: HIDE_MENU });
