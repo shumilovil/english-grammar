@@ -22,6 +22,7 @@ export const AchievementSlider = () => {
     const isMenuVisible = useSelector(state => state.app.isMenuVisible);
     // const [autoplay, setAutoplay] = useState(false);
     // const [activeIndexState, setActiveIndexState] = useState();
+    const [isPreviewOpen, setPreviewOpen] = useState(false);
     const swiperRef = useRef(null);
 
     // const onSlideChange = (swiper) => {
@@ -30,7 +31,7 @@ export const AchievementSlider = () => {
     //     console.log('activeIndex.current', activeIndex.current);
     // };
     useEffect(() => {
-        if (isMenuVisible) {
+        if (isMenuVisible || isPreviewOpen) {
             // setAutoplay(false);
             swiperRef.current.swiper.autoplay.stop();
         } else {
@@ -39,9 +40,9 @@ export const AchievementSlider = () => {
             //     'pauseOnMouseEnter': true,
             //     'disableOnInteraction': false
             // });
-            // swiperRef.current.swiper.autoplay.start();
+            swiperRef.current.swiper.autoplay.start();
         }
-    }, [isMenuVisible]);
+    }, [isMenuVisible, isPreviewOpen]);
 
     return (
         <div>
@@ -62,11 +63,11 @@ export const AchievementSlider = () => {
                 // spaceBetween={20}
                 centeredSlides={true}
                 // initialSlide={1}
-                // autoplay={{
-                //     'delay': 3000,
-                //     'pauseOnMouseEnter': true,
-                //     'disableOnInteraction': false
-                // }}
+                autoplay={{
+                    'delay': 3000,
+                    'pauseOnMouseEnter': true,
+                    'disableOnInteraction': false
+                }}
                 ref={swiperRef}
                 className='achievement-slider'>
 
@@ -79,8 +80,11 @@ export const AchievementSlider = () => {
                                         isActive
                                             ? <Image
                                                 src={`/achievements/${achievementNumber + 1}.jpg`}
-                                                preview={{ mask: <div>Увеличить</div> }} 
-                                                 />
+                                                preview={{
+                                                    mask: <div>Увеличить</div>,
+                                                    onVisibleChange: (isVisible) => setPreviewOpen(isVisible)
+                                                }}
+                                            />
                                             : <img src={`/achievements/${achievementNumber + 1}.jpg`} alt='' />
                                     }
                                 </div>
