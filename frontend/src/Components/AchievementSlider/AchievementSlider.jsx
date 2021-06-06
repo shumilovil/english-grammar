@@ -63,7 +63,7 @@ export const AchievementSlider = () => {
                 centeredSlides={true}
                 // initialSlide={1}
                 // autoplay={{
-                //     'delay': 2500,
+                //     'delay': 3000,
                 //     'pauseOnMouseEnter': true,
                 //     'disableOnInteraction': false
                 // }}
@@ -77,7 +77,10 @@ export const AchievementSlider = () => {
                                 <div className='slide-img-wrapper'>
                                     {
                                         isActive
-                                            ? <Image src={`/achievements/${achievementNumber + 1}.jpg`} preview={{ mask: <div>Увеличить</div> }} />
+                                            ? <Image
+                                                src={`/achievements/${achievementNumber + 1}.jpg`}
+                                                preview={{ mask: <div>Увеличить</div> }} 
+                                                 />
                                             : <img src={`/achievements/${achievementNumber + 1}.jpg`} alt='' />
                                     }
                                 </div>
