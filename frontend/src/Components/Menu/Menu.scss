@@ -1,4 +1,5 @@
 @import "../../GlobalVars.scss";
+$animationDuration: 0.3s;
 
 .menu {
     position: absolute;
@@ -6,7 +7,7 @@
     overflow: auto;
     max-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
     border-radius: $borderRadius;
-    z-index: 2;
+    z-index: 12;
     left: $mainPaddingDesktop;
     @media screen and (max-width: $breakPoint) {
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});
@@ -18,7 +19,7 @@
 }
 
 .overlay {
-    z-index: 1;
+    z-index: 11;
     position: absolute;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -27,12 +28,12 @@
         height: calc(100% - #{$headerHeightMobile});
     }
     opacity: 1;
-    transition: opacity 0.2s, visibility 0s;
+    transition: opacity $animationDuration, visibility 0s;
 
     &.hidden {
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.2s, visibility 0s 0.2s;
+        transition: opacity $animationDuration, visibility 0s $animationDuration;
     }
 }
 

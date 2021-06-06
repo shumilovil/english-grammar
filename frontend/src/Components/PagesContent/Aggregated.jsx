@@ -1,12 +1,12 @@
-import React from "react";
-import { AbcStreetCategory } from "./AbcStreet/AbcStreetCategory";
-import { AbcStreetKidsSubcategory } from "./AbcStreet/AbcStreetKidsSubcategory";
-import { FileList } from "../FileList/FileList";
-import { TeachersSubcategory } from "./Common/TeachersSubcategory";
-import { GrammarSmileCategory } from "./GrammarSmile/GrammarSmileCategory";
-import { GrammarSmileKidsSubcategory } from "./GrammarSmile/GrammarSmileKidsSubcategory";
-import { QuestionsCategory } from "./Questions/QuestionsCategory";
-import { QuestionsKidsSubcategory } from "./Questions/QuestionsKidsSubcategory";
+import React from 'react';
+import { AbcStreetCategory } from './AbcStreet/AbcStreetCategory';
+import { AbcStreetKidsSubcategory } from './AbcStreet/AbcStreetKidsSubcategory';
+import { FileList } from '../FileList/FileList';
+import { TeachersSubcategory } from './Common/TeachersSubcategory';
+import { GrammarSmileCategory } from './GrammarSmile/GrammarSmileCategory';
+import { GrammarSmileKidsSubcategory } from './GrammarSmile/GrammarSmileKidsSubcategory';
+import { QuestionsCategory } from './Questions/QuestionsCategory';
+import { QuestionsKidsSubcategory } from './Questions/QuestionsKidsSubcategory';
 
 
 // String keys match the category names in state
@@ -30,7 +30,7 @@ export const pagesContent = {
     'questions': {
         category: <QuestionsCategory />,
         subcategory: {
-            'detyam': <QuestionsKidsSubcategory/>,
+            'detyam': <QuestionsKidsSubcategory />,
             'uchitelyam': <TeachersSubcategory />,
             'files': <FileList />
         }
