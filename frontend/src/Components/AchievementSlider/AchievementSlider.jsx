@@ -65,8 +65,8 @@ export const AchievementSlider = () => {
                 // initialSlide={1}
                 autoplay={{
                     'delay': 3000,
-                    'pauseOnMouseEnter': true,
-                    'disableOnInteraction': false
+                    // 'pauseOnMouseEnter': true,
+                    // 'disableOnInteraction': false
                 }}
                 ref={swiperRef}
                 className='achievement-slider'>
