@@ -74,10 +74,14 @@ export const AchievementSlider = () => {
                     return (
                         <SwiperSlide key={achievementNumber}>
                             {({ isActive }) => (
-                                isActive
-                                    ? <Image src={`/achievements/${achievementNumber + 1}.jpg`} preview={{ mask: <div>Увеличить</div> }} />
-                                    : <img src={`/achievements/${achievementNumber + 1}.jpg`} alt='' />
-                            )}                            
+                                <div className='slide-img-wrapper'>
+                                    {
+                                        isActive
+                                            ? <Image src={`/achievements/${achievementNumber + 1}.jpg`} preview={{ mask: <div>Увеличить</div> }} />
+                                            : <img src={`/achievements/${achievementNumber + 1}.jpg`} alt='' />
+                                    }
+                                </div>
+                            )}
                             {/* <Image src={`/achievements/${achievementNumber + 1}.jpg`} preview={{
                                 mask: <div>Увеличить</div>,
                                 visible: isActive
@@ -85,7 +89,7 @@ export const AchievementSlider = () => {
                         </SwiperSlide>
                     );
                 })}
-            </Swiper>            
+            </Swiper>
         </div>
     );
 };
