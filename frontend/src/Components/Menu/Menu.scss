@@ -41,7 +41,7 @@ $mobileBreakPointShifTDueToScrollBar: 15px;
 
 body {
     &.menu-is-open {
-        @media screen and (max-width: $mobileBreakPoint) {
+        @media screen and (max-width: $scrollBlockBreakPoint) {
             overflow-y: hidden;
         }
     }
