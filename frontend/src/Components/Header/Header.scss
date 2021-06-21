@@ -6,7 +6,7 @@
     background-size: auto 100%;
 
     height: $headerHeight;
-    @media screen and (max-width: $breakPoint) {
+    @media screen and (max-width: $mobileBreakPoint) {
         height: $headerHeightMobile;
     }
 
@@ -22,7 +22,7 @@
         padding-left: $mainPaddingDesktop;
         padding-right: $mainPaddingDesktop;
         height: $headerHeight;
-        @media screen and (max-width: $breakPoint) {
+        @media screen and (max-width: $mobileBreakPoint) {
             padding-left: $mainPaddingMobile;
             padding-right: $mainPaddingMobile;
             height: $headerHeightMobile;
@@ -44,7 +44,7 @@
             text-transform: uppercase;            
             font-weight: bold;
             font-size: 30px;
-            @media screen and (max-width: $breakPoint) {
+            @media screen and (max-width: $mobileBreakPoint) {
                 font-size: 20px;
             }
         }
@@ -60,7 +60,7 @@
         position: absolute;
         left: $mainPaddingDesktop;
         font-size: 24px;
-        @media screen and (max-width: $breakPoint) {
+        @media screen and (max-width: $mobileBreakPoint) {
             left: $mainPaddingMobile;
             font-size: 20px;
         }

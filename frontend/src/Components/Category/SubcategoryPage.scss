@@ -3,7 +3,7 @@
 .subcategory {
     p {
         text-align: justify;
-        @media screen and (max-width: $breakPoint) {
+        @media screen and (max-width: $mobileBreakPoint) {
             text-align: left;
         }
     }

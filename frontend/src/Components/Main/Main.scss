@@ -7,7 +7,7 @@
 
     padding-left: $mainPaddingDesktop;
     padding-right: $mainPaddingDesktop;
-    @media screen and (max-width: $breakPoint) {
+    @media screen and (max-width: $mobileBreakPoint) {
         padding-left: $mainPaddingMobile;
         padding-right: $mainPaddingMobile;
     }
@@ -18,7 +18,7 @@
         position: relative;
         border-radius: $borderRadius;
         min-height: $mainMinHeight;
-        @media screen and (max-width: $breakPoint) {
+        @media screen and (max-width: $mobileBreakPoint) {
             min-height: $mainMinHeightMobile;
         }
     }
@@ -42,7 +42,7 @@
     li {
         margin-bottom: 7px;
         text-align: justify;
-        @media screen and (max-width: $breakPoint) {
+        @media screen and (max-width: $mobileBreakPoint) {
             text-align: left;
         }
     }

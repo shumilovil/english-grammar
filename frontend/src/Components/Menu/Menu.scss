@@ -1,7 +1,7 @@
 @import "../../GlobalVars.scss";
 $animationDuration: 0.3s;
 $menuShifTDueToScrollBar: 9px;
-$breakPointShifTDueToScrollBar: 15px;
+$mobileBreakPointShifTDueToScrollBar: 15px;
 
 .menu {
     position: absolute;
@@ -11,11 +11,11 @@ $breakPointShifTDueToScrollBar: 15px;
     border-radius: $borderRadius;
     z-index: 12;
     left: $mainPaddingDesktop;
-    @media screen and (max-width: $breakPoint) {
+    @media screen and (max-width: $mobileBreakPoint) {
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});
         left: $mainPaddingMobile;
     }
-    @media screen and (min-width: calc(#{$maxAppWidth} + #{$breakPointShifTDueToScrollBar})) {
+    @media screen and (min-width: calc(#{$maxAppWidth} + #{$mobileBreakPointShifTDueToScrollBar})) {
         left: calc((100vw - #{$maxAppWidth} + #{$mainPaddingDesktop} * 2) / 2 - #{$menuShifTDueToScrollBar});
     }
 }
@@ -26,7 +26,7 @@ $breakPointShifTDueToScrollBar: 15px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     height: calc(100% - #{$headerHeight});
-    @media screen and (max-width: $breakPoint) {
+    @media screen and (max-width: $mobileBreakPoint) {
         height: calc(100% - #{$headerHeightMobile});
     }
     opacity: 1;
@@ -41,7 +41,7 @@ $breakPointShifTDueToScrollBar: 15px;
 
 body {
     &.menu-is-open {
-        @media screen and (max-width: $breakPoint) {
+        @media screen and (max-width: $mobileBreakPoint) {
             overflow-y: hidden;
         }
     }

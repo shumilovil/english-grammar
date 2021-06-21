@@ -5,7 +5,7 @@
     &__big-btns {
         display: flex;
         flex-wrap: wrap;
-        @media screen and (max-width: $breakPoint) {
+        @media screen and (max-width: $mobileBreakPoint) {
             width: 100%;
             display: block;
             margin-top: 20px;
