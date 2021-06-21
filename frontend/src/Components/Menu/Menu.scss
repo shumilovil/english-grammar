@@ -1,5 +1,7 @@
 @import "../../GlobalVars.scss";
 $animationDuration: 0.3s;
+$menuShifTDueToScrollBar: 9px;
+$breakPointShifTDueToScrollBar: 15px;
 
 .menu {
     position: absolute;
@@ -13,8 +15,8 @@ $animationDuration: 0.3s;
         max-height: calc(100vh - #{$headerHeightMobile} - #{$footerHeight});
         left: $mainPaddingMobile;
     }
-    @media screen and (min-width: $maxAppWidth) {
-        left: calc((100vw - #{$maxAppWidth} + #{$mainPaddingDesktop} * 2) / 2);
+    @media screen and (min-width: calc(#{$maxAppWidth} + #{$breakPointShifTDueToScrollBar})) {
+        left: calc((100vw - #{$maxAppWidth} + #{$mainPaddingDesktop} * 2) / 2 - #{$menuShifTDueToScrollBar});
     }
 }
 
