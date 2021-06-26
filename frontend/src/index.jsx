@@ -5,11 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
+import ScrollMemory from 'react-router-scroll-memory';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter >
       <Provider store={store}>
+        <ScrollMemory />
         <App />
       </Provider>
     </BrowserRouter>

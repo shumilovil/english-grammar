@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useScrollToTop } from '../../hooks/scroll.hooks';
 import { usePageUrl } from '../../hooks/url.hooks';
 import { setCurrentSubcategory } from '../../redux/mainReducer';
 import { PageNotFound } from '../PageNotFound/PageNotFound';
@@ -18,9 +17,7 @@ export const SubcategoryPage = ({ availableSubcategories }) => {
         if (currentSubcategory) {
             dispatch(setCurrentSubcategory(currentSubcategory));
         }
-    }, [currentSubcategory, dispatch]);
-
-    useScrollToTop();
+    }, [currentSubcategory, dispatch]);   
 
     if (!currentSubcategory) {
         return <PageNotFound />;
