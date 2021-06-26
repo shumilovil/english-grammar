@@ -12,6 +12,8 @@
 /build
 /config
 
+/media
+
 # misc
 .DS_Store
 .env.local
