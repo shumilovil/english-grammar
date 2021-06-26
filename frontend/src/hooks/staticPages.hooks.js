@@ -10,4 +10,4 @@ export const useStaticPage = () => {
 
     const currentStaticPage = usePageUrl(staticPages, 'static'); 
     useEffect(() => dispatch(setCurrentStaticPage(currentStaticPage)));
-}
+};

@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Image } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Import Swiper styles
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import './AchievementSlider.scss';
+import { getAchievements } from '../../redux/achievementReducer';
 
 
 
@@ -29,6 +30,9 @@ export const AchievementSlider = () => {
             swiperRef.current.swiper.autoplay.start();
         }
     }, [isMenuVisible, isPreviewOpen]);
+
+    const dispatch = useDispatch();
+    useEffect(() => dispatch(getAchievements()));
 
     return (
         <div>

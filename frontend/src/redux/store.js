@@ -1,9 +1,11 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import { achievementReducer } from './achievementReducer';
 import { mainReducer } from './mainReducer';
 
 const rootReducer = combineReducers({
-    app: mainReducer
+    app: mainReducer,
+    achievements: achievementReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
