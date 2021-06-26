@@ -13,7 +13,7 @@ import { QuestionsKidsSubcategory } from './Questions/QuestionsKidsSubcategory';
 export const pagesContent = {
     'abc street': {
         category: <AbcStreetCategory />,
-        subcategory: {
+        subcategories: {
             'detyam': <AbcStreetKidsSubcategory />,
             'uchitelyam': <TeachersSubcategory />,
             'files': <FileList />
@@ -21,7 +21,7 @@ export const pagesContent = {
     },
     'grammar smile': {
         category: <GrammarSmileCategory />,
-        subcategory: {
+        subcategories: {
             'detyam': <GrammarSmileKidsSubcategory />,
             'uchitelyam': <TeachersSubcategory />,
             'files': <FileList />
@@ -29,7 +29,7 @@ export const pagesContent = {
     },
     'questions': {
         category: <QuestionsCategory />,
-        subcategory: {
+        subcategories: {
             'detyam': <QuestionsKidsSubcategory />,
             'uchitelyam': <TeachersSubcategory />,
             'files': <FileList />

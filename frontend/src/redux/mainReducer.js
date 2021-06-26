@@ -52,6 +52,20 @@ export const initialState = {
             url: '/files'
         }
     ],
+    staticPages: [
+        {
+            _id: 301,
+            url: '/otzyvy', 
+            name: 'otzyvy',
+            title: 'Отзывы', 
+        },
+        {
+            _id: 302,
+            url: '/contacts', 
+            name: 'contacts',
+            title: 'Контакты', 
+        }
+    ],
     currentCategory: null,
     currentSubcategory: null,
     currentStaticPage: null

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Switch, useRouteMatch } from 'react-router';
-import { useCatOrSubcat } from '../../hooks/category.hooks';
 import { useAvailableSubcat } from '../../hooks/subcategory.hooks';
+import { usePageUrl } from '../../hooks/url.hooks';
 import { setCurrentCategory } from '../../redux/mainReducer';
 import { PageNotFound } from '../PageNotFound/PageNotFound';
 import { CategoryPage } from './CategoryPage';
@@ -13,7 +13,7 @@ const Category = ({ categories, subcategories }) => {
     console.log('Category COMPONENT');
     const dispatch = useDispatch();
 
-    const currentCategory = useCatOrSubcat(categories, 'category');
+    const currentCategory = usePageUrl(categories, 'category');
     const availableSubcategories = useAvailableSubcat(currentCategory, subcategories);
     const { path } = useRouteMatch();    
 
