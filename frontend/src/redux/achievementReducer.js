@@ -1,4 +1,4 @@
-import { getAchievementsImgs } from '../api/api';
+import { userAPI } from '../api/api';
 
 const TOGGLE_ACHIEVEMENTS_LOADING = 'TOGGLE_ACHIEVEMENTS_LOADING';
 const SET_ACHIEVEMENTS = 'SET_ACHIEVEMENTS';
@@ -35,8 +35,7 @@ export const toggleAchievementsLoading = (isLoading) => ({ type: TOGGLE_ACHIEVEM
 export const setAchievements = (achievements) => ({ type: SET_ACHIEVEMENTS, achievements });
 export const getAchievements = () => async (dispatch) => {
     dispatch(toggleAchievementsLoading(true));
-    const achievements = await getAchievementsImgs();
-    console.log('achievements', achievements);
+    const achievements = await userAPI.getAchievements();
     dispatch(setAchievements(achievements));
     dispatch(toggleAchievementsLoading(false));
 };

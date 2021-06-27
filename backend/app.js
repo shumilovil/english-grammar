@@ -5,6 +5,7 @@ const cors = require('cors');
 const Category = require('./models/Category');
 const Subcategory = require('./models/Subcategory');
 const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
@@ -13,6 +14,7 @@ const PORT = config.get('port') || 5000;
 
 app.use(cors());
 app.use(express.json({ extended: true }));
+app.use('/media', express.static(path.join(__dirname, 'media')));
 
 app.get('/shum', (req, res) => {
   res.send({ testRes: 'shumtestres111222' });
