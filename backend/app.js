@@ -12,14 +12,9 @@ const app = express();
 
 const PORT = config.get('port') || 5000;
 
-
 app.use(cors());
 app.use(express.json({ extended: true }));
 app.use('/media', express.static(path.join(__dirname, 'media')));
-
-app.get('/shum', (req, res) => {
-  res.send({ testRes: 'shumtestres111222' });
-});
 
 app.get('/allpages', async (req, res) => {
   try {
@@ -41,8 +36,6 @@ app.get('/achievements', (req, res) => {
   }
 });
 
-
-
 const start = async () => {
   try {
     await mongoose.connect(config.get('mongoUri'), {
@@ -55,7 +48,5 @@ const start = async () => {
     console.log('Server error', error.message);
     process.exit(1);
   }
-
 };
-
 start();
