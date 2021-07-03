@@ -75,7 +75,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                                 {category.subcategoryIds.map(id => {
 
                                     // Define subcategory items
-                                    const subcategory = subcategories.find(subcategory => subcategory._id === id);
+                                    const subcategory = subcategories.find(subcategory => subcategory._id === id);                                    
                                     const subcategoryUrl = `${category.url}${subcategory.url}`;
                                     const subcategoryId = `${category._id}${subcategory._id}`;
                                     const subcategoryTitle = subcategory.title;

@@ -31,7 +31,7 @@ export const achievementReducer = (state = initialState, action) => {
 
 };
 
-export const toggleAchievementsLoading = (isLoading) => ({ type: TOGGLE_ACHIEVEMENTS_LOADING, isLoading });
+const toggleAchievementsLoading = (isLoading) => ({ type: TOGGLE_ACHIEVEMENTS_LOADING, isLoading });
 export const setAchievements = (achievements) => ({ type: SET_ACHIEVEMENTS, achievements });
 export const getAchievements = () => async (dispatch) => {
     dispatch(toggleAchievementsLoading(true));

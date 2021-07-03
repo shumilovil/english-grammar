@@ -3,14 +3,21 @@ import { Header } from './components/Header/Header';
 import { Main } from './components/Main/Main';
 import { Footer } from './components/Footer/Footer';
 import { AntMenu } from './components/Menu/Menu';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getAllPages } from './redux/mainReducer';
 
 function App() {
 
-    const categories = useSelector(state => state.app.categories);
-    const subcategories = useSelector(state => state.app.subcategories);    
+    const dispatch = useDispatch();
 
-    if (!categories || !subcategories) return null; // should be loading
+    const categories = useSelector(state => state.app.categories);
+    const subcategories = useSelector(state => state.app.subcategories);
+    const isAppLoading = useSelector(state => state.app.isLoading);
+
+    useEffect(() => dispatch(getAllPages()), [dispatch]);
+
+    if (isAppLoading) return null; // should be loading
 
     return (
         <div className='App'>
@@ -18,7 +25,7 @@ function App() {
             <AntMenu
                 categories={categories}
                 subcategories={subcategories} />
-            <Main                
+            <Main
                 categories={categories}
                 subcategories={subcategories} />
             <Footer />
