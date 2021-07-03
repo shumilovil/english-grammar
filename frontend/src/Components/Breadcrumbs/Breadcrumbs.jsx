@@ -24,7 +24,7 @@ export const AntBreadCrumbs = () => {
                 if (!page) return null;
                 const isLast = index === pages.length - 1;
                 return (
-                    <Breadcrumb.Item>
+                    <Breadcrumb.Item key={page._id}>
                         {isLast
                             ? page.title
                             : <Link to={page.url}>{page.title}</Link>}
