@@ -10,24 +10,16 @@ import { getAllPages } from './redux/mainReducer';
 function App() {
 
     const dispatch = useDispatch();
-
-    const categories = useSelector(state => state.app.categories);
-    const subcategories = useSelector(state => state.app.subcategories);
+   
     const isAppLoading = useSelector(state => state.app.isLoading);
 
-    useEffect(() => dispatch(getAllPages()), [dispatch]);
-
-    if (isAppLoading) return null; // should be loading
+    useEffect(() => dispatch(getAllPages()), [dispatch]);    
 
     return (
         <div className='App'>
-            <Header />
-            <AntMenu
-                categories={categories}
-                subcategories={subcategories} />
-            <Main
-                categories={categories}
-                subcategories={subcategories} />
+            <Header isAppLoading={isAppLoading} />
+            <AntMenu isAppLoading={isAppLoading} />
+            <Main isAppLoading={isAppLoading} />
             <Footer />
         </div>
     );

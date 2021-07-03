@@ -8,10 +8,13 @@ import { useMenuSelectedItems, useMenuVisibility } from '../../hooks/menu.hooks'
 
 const { SubMenu } = Menu;
 
-export const AntMenu = ({ categories, subcategories }) => {
+export const AntMenu = ({ isAppLoading }) => {
 
     const dispatch = useDispatch();
 
+    const categories = useSelector(state => state.app.categories);
+    const subcategories = useSelector(state => state.app.subcategories);
+    const staticPages = useSelector(state => state.app.staticPages);
     const isMenuVisible = useSelector(state => state.app.isMenuVisible);
     const currentCategory = useSelector(state => state.app.currentCategory);
     const currentSubCategory = useSelector(state => state.app.currentSubcategory);
@@ -19,11 +22,6 @@ export const AntMenu = ({ categories, subcategories }) => {
 
     const [openKeys, setOpenKeys] = useState([]);
     const [selectedKeys, setSelectedKeys] = useState([]);
-
-    const submenuKeys = [];
-    categories.forEach(category => {
-        submenuKeys.push(`${category._id}`);
-    });
 
     // Sets active menu items according to the current page change
     useMenuSelectedItems(
@@ -52,6 +50,8 @@ export const AntMenu = ({ categories, subcategories }) => {
         setSelectedKeys([]);
     };
 
+    if (isAppLoading) return null;
+
     return (
         <div className={isMenuVisible ? 'overlay' : 'overlay hidden'}
             onClick={handleOverlay}
@@ -75,7 +75,7 @@ export const AntMenu = ({ categories, subcategories }) => {
                                 {category.subcategoryIds.map(id => {
 
                                     // Define subcategory items
-                                    const subcategory = subcategories.find(subcategory => subcategory._id === id);                                    
+                                    const subcategory = subcategories.find(subcategory => subcategory._id === id);
                                     const subcategoryUrl = `${category.url}${subcategory.url}`;
                                     const subcategoryId = `${category._id}${subcategory._id}`;
                                     const subcategoryTitle = subcategory.title;
@@ -96,13 +96,21 @@ export const AntMenu = ({ categories, subcategories }) => {
 
                     <Menu.Divider />
 
-                    <Menu.Item key='otzyvy' >
+                    {staticPages.map(page => {
+                        return (
+                            <Menu.Item key={page.name} >
+                                <Link to={page.url}>{page.title}</Link>
+                            </Menu.Item>
+                        );
+                    })}
+
+                    {/* <Menu.Item key='otzyvy' >
                         <Link to='/otzyvy'>Отзывы</Link>
                     </Menu.Item>
 
                     <Menu.Item key='contacts'>
                         <Link to='/contacts'>Контакты</Link>
-                    </Menu.Item>
+                    </Menu.Item> */}
 
                 </Menu>
             </div>

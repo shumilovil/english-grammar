@@ -8,7 +8,7 @@ import { MenuIcon } from '../Icons/HeaderIcons/MenuIcon';
 import { Link } from 'react-router-dom';
 
 
-export const Header = () => {
+export const Header = ({ isAppLoading }) => {
 
     const dispatch = useDispatch();
 
@@ -26,9 +26,10 @@ export const Header = () => {
         <header className='header'>
             <div className='header__content'>
 
-                <div className='header__menu-toggle' onClick={toggleMenu} data-testid='menu-toggle-test'>
-                    {isMenuVisible ? <CloseIcon /> : <MenuIcon />}
-                </div>
+                {!isAppLoading &&
+                    <div className='header__menu-toggle' onClick={toggleMenu} data-testid='menu-toggle-test'>
+                        {isMenuVisible ? <CloseIcon /> : <MenuIcon />}
+                    </div>}
 
                 <div className='header__logo' onClick={logoClickHandler}>
                     <Link to='/'>
@@ -36,7 +37,7 @@ export const Header = () => {
                         <p className='header__logo-text'>with different kinds of supports</p>
                     </Link>
                 </div>
-                
+
             </div>
         </header>
     );
