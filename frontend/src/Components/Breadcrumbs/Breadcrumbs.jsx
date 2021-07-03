@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb } from 'antd';
 import { useSelector } from 'react-redux';
-import { Link, useHistory, useLocation, useParams, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const AntBreadCrumbs = () => {
 
@@ -9,69 +9,28 @@ export const AntBreadCrumbs = () => {
     const currentSubcategory = useSelector(state => state.app.currentSubcategory);
     const currentStaticPage = useSelector(state => state.app.currentStaticPage);
 
-    // const history = useHistory();
-    // const location = useLocation();
-    // const params = useParams();
-    // const routeMatch = useRouteMatch();
+    const pages = [currentCategory, currentSubcategory, currentStaticPage];
 
-    // console.log('history', history);
-    // console.log('location', location);
-    // console.log('params', params);
-    // console.log('routeMatch', routeMatch);
+    if (pages.every(page => !page)) return null;
 
-    if (!currentCategory && !currentSubcategory && !currentStaticPage) return null;
+    console.log('pages', pages);
 
-    if (currentCategory && !currentSubcategory) {
-        return (
-            <Breadcrumb>
-
-                <Breadcrumb.Item>
-                    <Link to='/'>Главная</Link>
-                </Breadcrumb.Item>
-
-                <Breadcrumb.Item>
-                    {currentCategory.title}
-                </Breadcrumb.Item>
-
-            </Breadcrumb>
-        );
-    }
-
-    if (currentCategory && currentSubcategory) {
-        return (
-            <Breadcrumb>
-
-                <Breadcrumb.Item>
-                    <Link to='/'>Главная</Link>
-                </Breadcrumb.Item>
-
-                <Breadcrumb.Item>
-                    <Link to={currentCategory.url}>{currentCategory.title}</Link>
-                </Breadcrumb.Item>
-
-                <Breadcrumb.Item>
-                    {currentSubcategory.title}
-                </Breadcrumb.Item>
-
-            </Breadcrumb>
-        );
-    }
-
-    if (currentStaticPage) {
-        return (
-            <Breadcrumb>
-
-                <Breadcrumb.Item>
-                    <Link to='/'>Главная</Link>
-                </Breadcrumb.Item>
-
-                <Breadcrumb.Item>
-                    {currentStaticPage.title}
-                </Breadcrumb.Item>
-
-            </Breadcrumb>
-        );
-    }
-
-    return null;
+    return (
+        <Breadcrumb>
+            <Breadcrumb.Item>
+                <Link to='/'>Главная</Link>
+            </Breadcrumb.Item>
+            {pages.map((page, index) => {
+                if (!page) return null;
+                const isLast = index === pages.length - 1;
+                return (
+                    <Breadcrumb.Item>
+                        {isLast
+                            ? page.title
+                            : <Link to={page.url}>{page.title}</Link>}
+                    </Breadcrumb.Item>
+                );
+            })}
+        </Breadcrumb>
+    );   
 };
