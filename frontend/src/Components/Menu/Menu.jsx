@@ -102,15 +102,7 @@ export const AntMenu = ({ isAppLoading }) => {
                                 <Link to={page.url}>{page.title}</Link>
                             </Menu.Item>
                         );
-                    })}
-
-                    {/* <Menu.Item key='otzyvy' >
-                        <Link to='/otzyvy'>Отзывы</Link>
-                    </Menu.Item>
-
-                    <Menu.Item key='contacts'>
-                        <Link to='/contacts'>Контакты</Link>
-                    </Menu.Item> */}
+                    })}                 
 
                 </Menu>
             </div>

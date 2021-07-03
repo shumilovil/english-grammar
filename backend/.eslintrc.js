@@ -13,6 +13,7 @@ module.exports = {
         "quotes": [
             "warn",
             "single"
-          ]
-      }
+        ],
+        "spaced-comment": ["error", "always"]
+    }
 };
