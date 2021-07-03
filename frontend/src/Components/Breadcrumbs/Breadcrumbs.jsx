@@ -1,13 +1,23 @@
 import React from 'react';
 import { Breadcrumb } from 'antd';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation, useParams, useRouteMatch } from 'react-router-dom';
 
 export const AntBreadCrumbs = () => {
 
     const currentCategory = useSelector(state => state.app.currentCategory);
     const currentSubcategory = useSelector(state => state.app.currentSubcategory);
     const currentStaticPage = useSelector(state => state.app.currentStaticPage);
+
+    // const history = useHistory();
+    // const location = useLocation();
+    // const params = useParams();
+    // const routeMatch = useRouteMatch();
+
+    // console.log('history', history);
+    // console.log('location', location);
+    // console.log('params', params);
+    // console.log('routeMatch', routeMatch);
 
     if (!currentCategory && !currentSubcategory && !currentStaticPage) return null;
 
@@ -61,7 +71,7 @@ export const AntBreadCrumbs = () => {
 
             </Breadcrumb>
         );
-    } 
-    
+    }
+
     return null;
 };
