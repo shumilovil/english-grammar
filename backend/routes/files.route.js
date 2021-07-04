@@ -1,8 +1,8 @@
 const fs = require('fs');
 const express = require('express');
-const downloads = express.Router();
+const files = express.Router();
 
-downloads.get('/files/:category', (req, res) => {
+files.get('/files/:category', (req, res) => {
     try {
         const category = req.params.category;
         const folders = fs
@@ -20,4 +20,4 @@ downloads.get('/files/:category', (req, res) => {
     }
 });
 
-module.exports = downloads;
+module.exports = files;
