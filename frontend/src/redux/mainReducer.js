@@ -92,9 +92,9 @@ const toggleAppLoading = (isLoading) => ({ type: TOGGLE_APP_LOADING, isLoading }
 const setCategories = (categories) => ({ type: SET_CATEGORIES, categories });
 const setSubcategories = (subcategories) => ({ type: SET_SUBCATEGORIES, subcategories });
 const setStaticPages = (staticPages) => ({ type: SET_STATIC_PAGES, staticPages });
-export const getAllPages = () => async (dispatch) => {
+export const getPages = () => async (dispatch) => {
     dispatch(toggleAppLoading(true));
-    const pages = await userAPI.getAllPages();
+    const pages = await userAPI.getPages();
     dispatch(setCategories(pages.categories));
     dispatch(setSubcategories(pages.subcategories));
     dispatch(setStaticPages(pages.staticPages));

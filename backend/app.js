@@ -2,39 +2,24 @@ const express = require('express');
 const config = require('config');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const Category = require('./models/Category');
-const Subcategory = require('./models/Subcategory');
-const StaticPage = require('./models/StaticPage');
-const fs = require('fs');
 const path = require('path');
+const pages = require('./routes/pages.route');
+const achievements = require('./routes/achievements.route');
+const files = require('./routes/files.route');
 
 const app = express();
 
 const PORT = config.get('port') || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' ? config.get('baseUrl') : '*',
+  optionsSuccessStatus: 200
+}));
 app.use(express.json({ extended: true }));
 app.use('/media', express.static(path.join(__dirname, 'media')));
-
-app.get('/allpages', async (req, res) => {
-  try {
-    const categories = await Category.find();
-    const subcategories = await Subcategory.find();
-    const staticPages = await StaticPage.find();
-    res.json({ categories, subcategories, staticPages });
-  } catch (error) {
-    res.status(500).json({ message: 'Something is wrong, try again' });
-  }
-});
-
-app.get('/achievements', (req, res) => {
-  try {
-    const achievements = fs.readdirSync('./media/achievements');
-    res.json({ achievements });
-  } catch (error) {
-    res.status(500).json({ message: 'Something is wrong, try again' });
-  }
-});
+app.use('/api', pages);
+app.use('/api', achievements);
+app.use('/api', files);
 
 const start = async () => {
   try {

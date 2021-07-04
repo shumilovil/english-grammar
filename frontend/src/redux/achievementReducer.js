@@ -4,7 +4,7 @@ const TOGGLE_ACHIEVEMENTS_LOADING = 'TOGGLE_ACHIEVEMENTS_LOADING';
 const SET_ACHIEVEMENTS = 'SET_ACHIEVEMENTS';
 
 const initialState = {
-    isLoading: false,
+    isLoading: true,
     achievements: []
 };
 

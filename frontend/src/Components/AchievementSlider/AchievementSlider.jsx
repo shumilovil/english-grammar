@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Image } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAchievements } from '../../redux/achievementReducer';
+import { useSelector } from 'react-redux';
 import { baseUrl } from '../../api/api';
 import { Preloader } from '../Preloader/Preloader';
 
@@ -31,14 +30,12 @@ const swiperConfig = {
     }
 };
 
-const achievementsUrl = `${baseUrl}media/achievements/`;
+const achievementsUrl = `${baseUrl}/media/achievements`;
 
 // Install Swiper modules
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
-export const AchievementSlider = () => {
-
-    const dispatch = useDispatch();
+export const AchievementSlider = () => {  
 
     const isMenuVisible = useSelector(state => state.app.isMenuVisible);
     const achievements = useSelector(state => state.achievements.achievements);
@@ -54,9 +51,7 @@ export const AchievementSlider = () => {
         } else {
             swiperRef.current.swiper.autoplay.start();
         }
-    }, [isMenuVisible, isPreviewOpen, achievements, isLoading]);
-
-    useEffect(() => dispatch(getAchievements()), [dispatch]);
+    }, [isMenuVisible, isPreviewOpen, achievements, isLoading]);   
 
     return (
         <>
@@ -70,7 +65,7 @@ export const AchievementSlider = () => {
                         className='achievement-slider'>
 
                         {achievements.map(achievement => {
-                            const imgSrc = `${achievementsUrl}${achievement}`;
+                            const imgSrc = `${achievementsUrl}/${achievement}`;
                             return (
                                 <SwiperSlide key={achievement}>
                                     {({ isActive }) => (

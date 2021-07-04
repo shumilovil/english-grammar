@@ -5,15 +5,19 @@ import { Footer } from './components/Footer/Footer';
 import { AntMenu } from './components/Menu/Menu';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getAllPages } from './redux/mainReducer';
+import { getPages } from './redux/mainReducer';
+import { getAchievements } from './redux/achievementReducer';
 
 function App() {
 
     const dispatch = useDispatch();
-   
+
     const isAppLoading = useSelector(state => state.app.isLoading);
 
-    useEffect(() => dispatch(getAllPages()), [dispatch]);    
+    useEffect(() => {
+        dispatch(getPages());
+        dispatch(getAchievements());
+    }, [dispatch]);
 
     return (
         <div className='App'>
