@@ -21,6 +21,11 @@ app.use('/api', pages);
 app.use('/api', achievements);
 app.use('/api', files);
 
+// app.use('/', express.static(path.join(__dirname, '..', 'frontend', 'build')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'));
+// });
+
 const start = async () => {
   try {
     await mongoose.connect(config.get('mongoUri'), {

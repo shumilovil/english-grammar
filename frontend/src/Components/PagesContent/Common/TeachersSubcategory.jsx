@@ -1,11 +1,20 @@
 import React from 'react';
-import { useCategoryTitle } from '../../../hooks/category.hooks';
 import { BigButton } from '../../BigButton/BigButton';
 import { icons } from '../../Icons/ButtonIcons/Aggregated';
+import { useSelector } from 'react-redux';
+import { baseUrl } from '../../../api/api';
+
+const recommendationUrl = `${baseUrl}/media/recommendations`;
 
 export const TeachersSubcategory = () => {
 
-    const currentCategoryTitle = useCategoryTitle();
+    const currentCategory = useSelector(state => state.app.currentCategory);
+    const currentCategoryUrl = currentCategory && currentCategory.url;
+    const currentCategoryTitle = currentCategory && currentCategory.title;
+    const recommendationFileUrl = currentCategoryUrl
+        && `${recommendationUrl}${currentCategoryUrl}_recommendations.doc`;
+
+    console.log('currentCategoryUrl reco', currentCategoryUrl);
 
     const icon = icons['files'];
 
@@ -14,8 +23,9 @@ export const TeachersSubcategory = () => {
             <h2>{currentCategoryTitle} - Рекомендации для учителей</h2>
             <p>Уважаемые коллеги, рекомендации по материалу '{currentCategoryTitle}' вы можете скачать ниже:</p>
             <BigButton
+                download={true}
                 buttonText='Скачать рекомендации'
-                url='*'
+                url={recommendationFileUrl}
                 icon={icon} />
         </div>
     );
