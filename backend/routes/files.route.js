@@ -2,14 +2,14 @@ const fs = require('fs');
 const express = require('express');
 const files = express.Router();
 
-files.get('/files/:category', (req, res) => {
+files.get('/:category/files', (req, res) => {
     try {
         const category = req.params.category;
         const folders = fs
-            .readdirSync(`./media/files/${category}`, { withFileTypes: true })
+            .readdirSync(`./media/${category}/files`, { withFileTypes: true })
             .filter(item => !item.isFile());
         const fileStructure = folders.reduce((result, folder) => {
-            const filesInFolder = fs.readdirSync(`./media/files/${category}/${folder.name}`);
+            const filesInFolder = fs.readdirSync(`./media/${category}/files/${folder.name}`);
             result[folder.name] = filesInFolder;           
             return result;
         }, {});

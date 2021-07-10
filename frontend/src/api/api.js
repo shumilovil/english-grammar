@@ -17,7 +17,7 @@ export const userAPI = {
     },
 
     async getFiles(categoryUrl) {
-        const files = await axios.get(apiUrl + '/files' + categoryUrl).then(res => res.data);
+        const files = await axios.get(apiUrl + categoryUrl + '/files').then(res => res.data);
         return files;
     }
 

@@ -4,7 +4,7 @@ import { icons } from '../../Icons/ButtonIcons/Aggregated';
 import { useSelector } from 'react-redux';
 import { baseUrl } from '../../../api/api';
 
-const recommendationUrl = `${baseUrl}/media/recommendations`;
+const mediaUrl = `${baseUrl}/media`;
 
 export const TeachersSubcategory = () => {
 
@@ -12,7 +12,7 @@ export const TeachersSubcategory = () => {
     const currentCategoryUrl = currentCategory && currentCategory.url;
     const currentCategoryTitle = currentCategory && currentCategory.title;
     const recommendationFileUrl = currentCategoryUrl
-        && `${recommendationUrl}${currentCategoryUrl}_recommendations.pdf`;    
+        && `${mediaUrl}${currentCategoryUrl}/recommendations${currentCategoryUrl}_recommendations.pdf`;    
 
     const icon = icons['files'];
 

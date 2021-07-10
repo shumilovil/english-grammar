@@ -9,7 +9,7 @@ import { baseUrl } from '../../api/api';
 import { processText } from './helpers';
 const { Panel } = Collapse;
 
-const filesUrl = `${baseUrl}/media/files`;
+const mediaUrl = `${baseUrl}/media`;
 
 export const FileList = () => {
 
@@ -37,7 +37,7 @@ export const FileList = () => {
                         <Panel header={groupName} key={groupName}>
                             {fileGroups[fileGroup].map(file => {
                                 const fileName = processText(file);
-                                const fileUrl = `${filesUrl}${currentCategoryUrl}/${fileGroup}/${file}`;
+                                const fileUrl = `${mediaUrl}${currentCategoryUrl}/files/${fileGroup}/${file}`;
                                 return (
                                     <a
                                         download
