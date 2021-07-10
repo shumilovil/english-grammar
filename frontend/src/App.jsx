@@ -6,7 +6,7 @@ import { AntMenu } from './components/Menu/Menu';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getPages } from './redux/mainReducer';
-import { getAchievements } from './redux/achievementReducer';
+import { getAchievements } from './redux/achievementsReducer';
 
 function App() {
 

@@ -1,13 +1,15 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { achievementReducer } from './achievementReducer';
+import { achievementsReducer } from './achievementsReducer';
 import { filesReducer } from './filesReducer';
 import { mainReducer } from './mainReducer';
+import { recommendationsReducer } from './recommendationsReducer';
 
 const rootReducer = combineReducers({
     app: mainReducer,
-    achievements: achievementReducer,
-    files: filesReducer
+    achievements: achievementsReducer,
+    files: filesReducer,
+    recommendations: recommendationsReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

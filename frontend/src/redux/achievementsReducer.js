@@ -8,7 +8,7 @@ const initialState = {
     achievements: []
 };
 
-export const achievementReducer = (state = initialState, action) => {
+export const achievementsReducer = (state = initialState, action) => {
 
     switch (action.type) {
 

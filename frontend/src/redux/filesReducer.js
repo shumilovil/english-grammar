@@ -35,7 +35,7 @@ const toggleFilesLoading = (isLoading) => ({ type: TOGGLE_FILES_LOADING, isLoadi
 const setFiles = (files) => ({ type: SET_FILES, files });
 export const getFiles = (categoryUrl) => async (dispatch) => {
     dispatch(toggleFilesLoading(true));
-    const files = await userAPI.getFiles(categoryUrl);
+    const files = await userAPI.getFiles(categoryUrl, 'files');
     dispatch(setFiles(files));
     dispatch(toggleFilesLoading(false));
 };

@@ -1,32 +1,39 @@
 import React from 'react';
-import { BigButton } from '../../BigButton/BigButton';
-import { icons } from '../../Icons/ButtonIcons/Aggregated';
-import { useSelector } from 'react-redux';
-import { baseUrl } from '../../../api/api';
-
-const mediaUrl = `${baseUrl}/media`;
+import { useSelector, useDispatch } from 'react-redux';
+import { FilesList } from '../../FilesList/FilesList';
+import { getRecommendations } from '../../../redux/recommendationsReducer';
+import { Preloader } from './../../Preloader/Preloader';
+import { useEffect } from 'react';
+import { useCategoryTitle, useCategoryUrl } from '../../../hooks/category.hooks';
+import './TeachersSubcategory.scss';
+import { removeUnderscore } from './helpers';
 
 export const TeachersSubcategory = () => {
 
-    const currentCategory = useSelector(state => state.app.currentCategory);
-    const currentCategoryUrl = currentCategory && currentCategory.url;
-    const currentCategoryTitle = currentCategory && currentCategory.title;
-    const recommendationFileUrl = currentCategoryUrl
-        && `${mediaUrl}${currentCategoryUrl}/recommendations${currentCategoryUrl}_recommendations.pdf`;    
+    const dispatch = useDispatch();
 
-    const icon = icons['files'];
+    const isLoading = useSelector(state => state.recommendations.isLoading);
+    const currentCategoryUrl = useCategoryUrl();
+    const currentCategoryTitle = useCategoryTitle();
+    const fileGroups = useSelector(state => state.recommendations.recommendations);
 
-    if (!recommendationFileUrl) return null;
+    useEffect(() => {
+        if (currentCategoryUrl) dispatch(getRecommendations(currentCategoryUrl));
+    }, [dispatch, currentCategoryUrl]);
+
+    if (isLoading) return <Preloader />;
 
     return (
-        <div className='abc-street-teachers-subcat'>
+        <div className='teachers-subcat'>
             <h2>{currentCategoryTitle} - Рекомендации для учителей</h2>
-            <p>Уважаемые коллеги, рекомендации по материалу '{currentCategoryTitle}' вы можете скачать ниже:</p>
-            <BigButton
-                download={true}
-                buttonText='Скачать рекомендации'
-                url={recommendationFileUrl}
-                icon={icon} />
+            <p className='teachers-subcat__note'>Уважаемые коллеги, рекомендации по материалу '{currentCategoryTitle}' вы можете скачать ниже:</p>           
+            <FilesList
+                fileGroups={fileGroups}
+                pageType='recommendations'
+                currentCategoryUrl={currentCategoryUrl}
+                processText={removeUnderscore}
+                isFirstActive={true}
+            />
         </div>
     );
 };

@@ -12,12 +12,12 @@ export const userAPI = {
     },
 
     async getPages() {
-        const pages = await axios(apiUrl + '/pages').then(res => res.data);
+        const pages = await axios(`${apiUrl}/pages`).then(res => res.data);
         return pages;
     },
 
-    async getFiles(categoryUrl) {
-        const files = await axios.get(apiUrl + categoryUrl + '/files').then(res => res.data);
+    async getFiles(categoryUrl, type) {
+        const files = await axios.get(`${apiUrl}${categoryUrl}/${type}`).then(res => res.data);
         return files;
     }
 

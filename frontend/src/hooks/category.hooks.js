@@ -6,3 +6,10 @@ export const useCategoryTitle = () => {
         return currentCategory && currentCategory.title;
     });
 };
+
+export const useCategoryUrl = () => {
+    return useSelector(state => {
+        const currentCategory = state.app.currentCategory;
+        return currentCategory && currentCategory.url;
+    });
+};
