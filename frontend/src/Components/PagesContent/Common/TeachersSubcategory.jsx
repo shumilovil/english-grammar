@@ -12,7 +12,7 @@ export const TeachersSubcategory = () => {
     const currentCategoryUrl = currentCategory && currentCategory.url;
     const currentCategoryTitle = currentCategory && currentCategory.title;
     const recommendationFileUrl = currentCategoryUrl
-        && `${recommendationUrl}${currentCategoryUrl}_recommendations.doc`;    
+        && `${recommendationUrl}${currentCategoryUrl}_recommendations.pdf`;    
 
     const icon = icons['files'];
 
