@@ -32,8 +32,8 @@ export const Header = ({ isAppLoading }) => {
 
                 <div className='header__logo' onClick={logoClickHandler}>
                     <Link to='/'>
-                        <h1 className='header__logo-title'>English</h1>
-                        <p className='header__logo-text'>with different kinds of supports</p>
+                        <h1 className='header__logo-title'>3Words.ru</h1>
+                        <p className='header__logo-text'>Look, Listen & Do</p>
                     </Link>
                 </div>
 

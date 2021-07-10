@@ -11,9 +11,7 @@ export const AntBreadCrumbs = () => {
 
     const pages = [currentCategory, currentSubcategory, currentStaticPage];
 
-    if (pages.every(page => !page)) return null;
-
-    console.log('pages', pages);
+    if (pages.every(page => !page)) return null;   
 
     return (
         <Breadcrumb>

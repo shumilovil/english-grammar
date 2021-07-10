@@ -12,11 +12,11 @@ export const TeachersSubcategory = () => {
     const currentCategoryUrl = currentCategory && currentCategory.url;
     const currentCategoryTitle = currentCategory && currentCategory.title;
     const recommendationFileUrl = currentCategoryUrl
-        && `${recommendationUrl}${currentCategoryUrl}_recommendations.doc`;
-
-    console.log('currentCategoryUrl reco', currentCategoryUrl);
+        && `${recommendationUrl}${currentCategoryUrl}_recommendations.doc`;    
 
     const icon = icons['files'];
+
+    if (!recommendationFileUrl) return null;
 
     return (
         <div className='abc-street-teachers-subcat'>

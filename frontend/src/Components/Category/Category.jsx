@@ -9,8 +9,7 @@ import { CategoryPage } from './CategoryPage';
 import { SubcategoryPage } from './SubcategoryPage';
 
 const Category = ({ categories, subcategories }) => {
-
-    console.log('Category COMPONENT');
+    
     const dispatch = useDispatch();
 
     const currentCategory = usePageUrl(categories, 'category');

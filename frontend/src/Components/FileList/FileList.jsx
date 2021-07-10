@@ -20,7 +20,6 @@ export const FileList = () => {
     const currentCategoryUrl = currentCategory && currentCategory.url;
     const currentCategoryTitle = currentCategory && currentCategory.title;
     const fileGroups = useSelector(state => state.files.files);
-    console.log('fileGroups', fileGroups);
 
     useEffect(() => {
         if (currentCategoryUrl) dispatch(getFiles(currentCategoryUrl));
