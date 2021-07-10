@@ -25,11 +25,13 @@
         align-items: center;
         justify-content: space-between;
         @include animation();
+        svg path {
+            @include animation();
+        }
         &:hover {
             color: #1890ff;
             svg path {
                 fill: #1890ff;
-                @include animation();
             }
         }
         &:not(:last-child) {
