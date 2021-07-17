@@ -12,8 +12,8 @@ const app = express();
 const PORT = config.get('port') || 5000;
 
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? config.get('baseUrl') : '*',
-  optionsSuccessStatus: 200
+    origin: process.env.NODE_ENV === 'production' ? config.get('baseUrl') : '*',
+    optionsSuccessStatus: 200
 }));
 app.use(express.json({ extended: true }));
 app.use('/media', express.static(path.join(__dirname, 'media')));
@@ -21,22 +21,24 @@ app.use('/api', pages);
 app.use('/api', achievements);
 app.use('/api', files);
 
-// app.use('/', express.static(path.join(__dirname, '..', 'frontend', 'build')));
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'));
-// });
+if (process.env.NODE_ENV === 'production') {
+    app.use('/', express.static(path.join(__dirname, '..', 'frontend', 'build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'));
+    });
+}
 
 const start = async () => {
-  try {
-    await mongoose.connect(config.get('mongoUri'), {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true
-    });
-    app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`));
-  } catch (error) {
-    console.log('Server error', error.message);
-    process.exit(1);
-  }
+    try {
+        await mongoose.connect(config.get('mongoUri'), {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
+        });
+        app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`));
+    } catch (error) {
+        console.log('Server error', error.message);
+        process.exit(1);
+    }
 };
 start();

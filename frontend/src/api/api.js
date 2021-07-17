@@ -1,7 +1,6 @@
 import * as axios from 'axios';
 
-export const baseUrl = 'http://localhost:5000';
-const apiUrl = baseUrl + '/api';
+const apiUrl = '/api';
 
 export const userAPI = {
 

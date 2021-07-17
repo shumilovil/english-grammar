@@ -3,7 +3,6 @@ import { Image } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper/core';
 import { useSelector } from 'react-redux';
-import { baseUrl } from '../../api/api';
 import { Preloader } from '../Preloader/Preloader';
 
 // Import Swiper styles
@@ -30,7 +29,7 @@ const swiperConfig = {
     }
 };
 
-const achievementsUrl = `${baseUrl}/media/achievements`;
+const achievementsUrl = '/media/achievements';
 
 // Install Swiper modules
 SwiperCore.use([Pagination, Navigation, Autoplay]);

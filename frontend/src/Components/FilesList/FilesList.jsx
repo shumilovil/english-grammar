@@ -2,10 +2,9 @@ import './FilesList.scss';
 import React from 'react';
 import { Collapse } from 'antd';
 import { DownloadIcon } from './../Icons/ButtonIcons/DownloadIcon';
-import { baseUrl } from '../../api/api';
 const { Panel } = Collapse;
 
-const mediaUrl = `${baseUrl}/media`;
+const mediaUrl = '/media';
 
 export const FilesList = ({ fileGroups, processText, pageType, currentCategoryUrl, isFirstActive }) => {
 
