@@ -51,7 +51,11 @@ const start = async () => {
         //     cert: fs.readFileSync('./sslcert/0000_csr-certbot.pem'),
         //     key: fs.readFileSync('./sslcert/0000_key-certbot.pem')
         // };
-        app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`));
+        app.listen(PORT, () => {
+            console.log(`App has been started on port ${PORT}...`);
+            console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+            console.log('baseUrl', config.get('baseUrl'));
+        });
         // if (process.env.NODE_ENV === 'production') https.createServer(options, app).listen(443);
     } catch (error) {
         console.log('Server error', error.message);
