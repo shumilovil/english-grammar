@@ -51,8 +51,8 @@ const start = async () => {
             useCreateIndex: true
         });
         const options = {
-            cert: fs.readFileSync('./sslcert/fullchain.pem'),
-            key: fs.readFileSync('./sslcert/privkey.pem')
+            cert: fs.readFileSync('./sslcert/0000_csr-certbot.pem'),
+            key: fs.readFileSync('./sslcert/0000_key-certbot.pem')
         };
         app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`));
         if (process.env.NODE_ENV === 'production') https.createServer(options, app).listen(443);
