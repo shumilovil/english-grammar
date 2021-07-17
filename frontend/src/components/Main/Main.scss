@@ -49,5 +49,9 @@
 
     p {
         margin-bottom: 0;
+        text-align: justify;
+        @media screen and (max-width: $mobileBreakPoint) {
+            text-align: left;
+        }
     }    
 }
