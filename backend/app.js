@@ -13,10 +13,7 @@ const app = express();
 
 const PORT = config.get('port') || 5000;
 
-app.use(cors({
-    origin: process.env.NODE_ENV === 'production' ? config.get('baseUrl') : '*',
-    optionsSuccessStatus: 200
-}));
+app.use(cors());
 // app.use((req, res, next) => {
 //     if (process.env.NODE_ENV === 'production') {
 //         console.log('secure', req.secure);
