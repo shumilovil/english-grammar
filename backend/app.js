@@ -6,6 +6,8 @@ const path = require('path');
 const pages = require('./routes/pages.route');
 const achievements = require('./routes/achievements.route');
 const files = require('./routes/files.route');
+const https = require('https');
+const fs = require('fs');
 
 const app = express();
 
@@ -15,6 +17,19 @@ app.use(cors({
     origin: process.env.NODE_ENV === 'production' ? config.get('baseUrl') : '*',
     optionsSuccessStatus: 200
 }));
+app.use((req, res, next) => {
+    if (process.env.NODE_ENV === 'production') {
+        console.log('secure', req.secure);
+        if (req.secure) {
+            // request was via https, so do no special handling
+            next();
+        } else {
+            // request was via http, so redirect to https
+            res.redirect('https://' + req.headers.host + req.url);
+        }
+    } else next();
+
+});
 app.use(express.json({ extended: true }));
 app.use('/media', express.static(path.join(__dirname, 'media')));
 app.use('/api', pages);
@@ -35,7 +50,12 @@ const start = async () => {
             useUnifiedTopology: true,
             useCreateIndex: true
         });
+        const options = {
+            cert: fs.readFileSync('./sslcert/fullchain.pem'),
+            key: fs.readFileSync('./sslcert/privkey.pem')
+        };
         app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`));
+        if (process.env.NODE_ENV === 'production') https.createServer(options, app).listen(443);
     } catch (error) {
         console.log('Server error', error.message);
         process.exit(1);

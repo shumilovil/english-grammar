@@ -13,6 +13,7 @@
 /config
 
 /media
+/sslcert
 
 # misc
 .DS_Store
