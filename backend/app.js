@@ -47,16 +47,19 @@ const start = async () => {
             useUnifiedTopology: true,
             useCreateIndex: true
         });
-        const options = {
-            cert: fs.readFileSync('./sslcert/fullchain.pem'),
-            key: fs.readFileSync('./sslcert/privkey.pem')
-        };
+        
         app.listen(PORT, () => {
             console.log(`App has been started on port ${PORT}...`);
             console.log('process.env.NODE_ENV', process.env.NODE_ENV);
             console.log('baseUrl', config.get('baseUrl'));
         });
-        if (process.env.NODE_ENV === 'production') https.createServer(options, app).listen(443);
+        if (process.env.NODE_ENV === 'production') {
+            const options = {
+                cert: fs.readFileSync('./sslcert/fullchain.pem'),
+                key: fs.readFileSync('./sslcert/privkey.pem')
+            };
+            https.createServer(options, app).listen(443);
+        }
     } catch (error) {
         console.log('Server error', error.message);
         process.exit(1);
