@@ -1,4 +1,14 @@
+@import "../../GlobalVars.scss";
+
 .main-page {
+    &__about-site {
+        p {
+            text-align: justify;
+            @media screen and (max-width: $mobileBreakPoint) {
+                text-align: left;
+            }
+        }
+    }
     &__cards {
         display: flex;
         justify-content: space-evenly;
