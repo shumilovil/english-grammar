@@ -20,10 +20,8 @@ export const AntBreadCrumbs = () => {
                 <Link to='/'>Главная</Link>
             </Breadcrumb.Item>
             {activePages.map((page, index) => {
-                if (!page) return null;
-                // console.log('page', page);                
+                if (!page) return null;         
                 const isLast = index === activePages.length - 1;
-                // console.log('isLast', isLast);
                 return (
                     <Breadcrumb.Item key={page._id}>
                         {isLast
