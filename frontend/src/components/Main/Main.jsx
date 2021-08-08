@@ -14,7 +14,6 @@ const Contacts = lazy(() => import('../StaticPages/Contacts'));
 const Reviews = lazy(() => import('../StaticPages/Reviews'));
 
 
-
 export const Main = ({ isAppLoading }) => {
 
     const { pathname } = useLocation();
