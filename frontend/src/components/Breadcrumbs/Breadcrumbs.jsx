@@ -10,17 +10,20 @@ export const AntBreadCrumbs = () => {
     const currentStaticPage = useSelector(state => state.app.currentStaticPage);
 
     const pages = [currentCategory, currentSubcategory, currentStaticPage];
+    const activePages = pages.filter(page => !!page);   
 
-    if (pages.every(page => !page)) return null;   
+    if (!activePages.length) return null;
 
     return (
         <Breadcrumb>
             <Breadcrumb.Item>
                 <Link to='/'>Главная</Link>
             </Breadcrumb.Item>
-            {pages.map((page, index) => {
+            {activePages.map((page, index) => {
                 if (!page) return null;
-                const isLast = index === pages.length - 1;
+                // console.log('page', page);                
+                const isLast = index === activePages.length - 1;
+                // console.log('isLast', isLast);
                 return (
                     <Breadcrumb.Item key={page._id}>
                         {isLast
@@ -30,5 +33,5 @@ export const AntBreadCrumbs = () => {
                 );
             })}
         </Breadcrumb>
-    );   
+    );
 };
