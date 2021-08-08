@@ -1,30 +1,23 @@
 import React, { lazy } from 'react';
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router';
-import { useLocation } from 'react-router-dom';
 import { AntBreadCrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { Preloader } from '../Preloader/Preloader';
-import './Main.scss';
 import { MainPage } from './MainPage';
+import { useYMUrlChange } from './../../hooks/metrika.hooks';
+import './Main.scss';
 
 const Category = lazy(() => import('../Category/Category'));
 const Contacts = lazy(() => import('../StaticPages/Contacts'));
 const Reviews = lazy(() => import('../StaticPages/Reviews'));
 
-
-export const Main = ({ isAppLoading }) => {
-
-    const { pathname } = useLocation();
+export const Main = ({ isAppLoading }) => {    
 
     const categories = useSelector(state => state.app.categories);
     const subcategories = useSelector(state => state.app.subcategories);
 
-    useEffect(() => {
-        if (!window.ym) return;
-        window.ym(83801950, 'hit', pathname);
-        console.log('CHANGE URL');
-    }, [pathname]);
+    useYMUrlChange();
 
     return (
         <main className='main'>
