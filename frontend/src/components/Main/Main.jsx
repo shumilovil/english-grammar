@@ -7,7 +7,6 @@ import { AntBreadCrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { Preloader } from '../Preloader/Preloader';
 import './Main.scss';
 import { MainPage } from './MainPage';
-import ym from 'react-yandex-metrika';
 
 const Category = lazy(() => import('../Category/Category'));
 const Contacts = lazy(() => import('../StaticPages/Contacts'));
@@ -22,7 +21,9 @@ export const Main = ({ isAppLoading }) => {
     const subcategories = useSelector(state => state.app.subcategories);
 
     useEffect(() => {
-        ym('hit', pathname);
+        if (!window.ym) return;
+        window.ym(83801950, 'hit', pathname);
+        console.log('CHANGE URL');
     }, [pathname]);
 
     return (
