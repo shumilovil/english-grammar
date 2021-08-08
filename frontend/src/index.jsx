@@ -16,7 +16,7 @@ ReactDOM.render(
         <App />
       </Provider>
     </BrowserRouter>
-    <YMInitializer accounts={[83801950]} options={{ defer: true }} />
+    <YMInitializer accounts={[83801950]} options={{ defer: true }} version='2' />
   </React.StrictMode>,
   document.getElementById('root')
 );
