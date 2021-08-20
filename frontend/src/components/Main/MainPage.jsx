@@ -22,7 +22,7 @@ export const MainPage = ({ categories }) => {
 
     return (
         <div className='main-page' data-testid='main-page-test'>
-            <div className={`main-page__about-site ${isAboutOpen ? 'about-open': ''}`}>
+            <div className={`main-page__about-site ${isAboutOpen ? 'about-open' : ''}`}>
                 <h2>О сайте</h2>
                 <p>
                     Приветствуем на страницах нашего сайта учителей английского языка, родителей и, конечно, самих детей!
@@ -56,6 +56,7 @@ export const MainPage = ({ categories }) => {
                 <p>
                     Выражаем надежду, что предлагаемые учебные пособия окажутся  полезными Вам, уважаемые коллеги, и Вашим ученикам, родителям и студентам – будущим учителям английского языка.
                 </p>
+                <br />
             </div>
             <p onClick={toggleAboutOpen} className='main-page__about-site-toggle'>
                 {isAboutOpen ? 'Свернуть' : 'Развернуть'}
