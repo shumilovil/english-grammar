@@ -11,6 +11,7 @@ import './Main.scss';
 const Category = lazy(() => import('../Category/Category'));
 const Contacts = lazy(() => import('../StaticPages/Contacts'));
 const Reviews = lazy(() => import('../StaticPages/Reviews'));
+const Publications = lazy(() => import('../StaticPages/Publications'));
 
 export const Main = ({ isAppLoading }) => {    
 
@@ -40,6 +41,10 @@ export const Main = ({ isAppLoading }) => {
 
                             <Route exact path='/contacts'>
                                 <Contacts />
+                            </Route>
+
+                            <Route exact path='/publications'>
+                                <Publications />
                             </Route>
 
                             <Route path='/:category'>

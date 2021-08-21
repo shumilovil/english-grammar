@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenuVisibility } from '../../redux/mainReducer';
 import { Link } from 'react-router-dom';
 import { useMenuSelectedItems, useMenuVisibility } from '../../hooks/menu.hooks';
+import { useSortStaticPage } from '../../hooks/staticPages.hooks';
 
 const { SubMenu } = Menu;
 
@@ -15,6 +16,7 @@ export const AntMenu = ({ isAppLoading }) => {
     const categories = useSelector(state => state.app.categories);
     const subcategories = useSelector(state => state.app.subcategories);
     const staticPages = useSelector(state => state.app.staticPages);
+    const sortedStaticPages = useSortStaticPage(staticPages);
     const isMenuVisible = useSelector(state => state.app.isMenuVisible);
     const currentCategory = useSelector(state => state.app.currentCategory);
     const currentSubCategory = useSelector(state => state.app.currentSubcategory);
@@ -96,7 +98,7 @@ export const AntMenu = ({ isAppLoading }) => {
 
                     <Menu.Divider />
 
-                    {staticPages.map(page => {
+                    {sortedStaticPages.map(page => {
                         return (
                             <Menu.Item key={page.name} >
                                 <Link to={page.url}>{page.title}</Link>
