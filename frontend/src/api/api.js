@@ -11,7 +11,7 @@ export const userAPI = {
     },
 
     async getPages() {
-        const pages = await axios(`${apiUrl}/pages`).then(res => res.data);
+        const pages = await axios.get(`${apiUrl}/pages`).then(res => res.data);
         return pages;
     },
 
