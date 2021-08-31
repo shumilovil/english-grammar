@@ -29,6 +29,8 @@ const swiperConfig = {
     }
 };
 
+const isMobile = window.innerWidth < 1440;
+
 const achievementsUrl = '/media/achievements';
 
 // Install Swiper modules
@@ -73,7 +75,7 @@ export const AchievementSlider = () => {
                                                 ? <Image
                                                     src={imgSrc}
                                                     preview={{
-                                                        mask: <div>Увеличить</div>,
+                                                        mask: isMobile ? null : <div>Увеличить</div>,
                                                         onVisibleChange: (isVisible) => setPreviewOpen(isVisible)
                                                     }}
                                                 />

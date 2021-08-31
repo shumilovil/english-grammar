@@ -65,6 +65,8 @@ $sliderHeightSmall: 390px;
     }
 
     &.swiper-slide-active {
+      cursor: zoom-in;
+
       .slide-img-wrapper {
         max-width: 100%;
         filter: none;
