@@ -14,6 +14,7 @@ reviews.post('/new-review', async (req, res) => {
             .catch(error => { throw error; });
 
     } catch (error) {
+        
         console.error(error);
         res.status(500).json({ message: 'Something is wrong, try again' });
     }
