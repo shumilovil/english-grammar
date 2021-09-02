@@ -29,7 +29,7 @@ export const userAPI = {
             formattedDate,
             date: currentDate,
             moderated: false
-        }).then(res => res).catch(() => null);
+        }).catch(() => null);
         return response;
     },
 

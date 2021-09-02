@@ -18,7 +18,7 @@ const sendEmailNotification = async (data) => {
 
     await transporter.sendMail({
         from: '3words Mail <3words.noreply@gmail.com>',
-        to: 'shumilovil@gmail.com',
+        to: 'shumilovil@gmail.com, nshumilova@inbox.ru',
         subject: `Новый отзыв от ${username}, ${formattedDate}`,
         html: `
         <div>

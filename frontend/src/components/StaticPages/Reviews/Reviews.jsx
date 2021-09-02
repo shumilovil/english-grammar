@@ -1,13 +1,14 @@
 import { React, useEffect, useMemo } from 'react';
 import { useStaticPage } from '../../../hooks/staticPages.hooks';
-import { Form, Input, Button, Rate, message } from 'antd';
+import { Form, Input, Button, Rate } from 'antd';
 import './Reviews.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReviews, toggleErrorMessage, toggleSuccessMessage } from '../../../redux/reviewsReducer';
+import { getReviews } from '../../../redux/reviewsReducer';
 import { setReview } from './../../../redux/reviewsReducer';
 import { Preloader } from './../../Preloader/Preloader';
 import { SingleReview } from './SingleReview/SingleReview';
 import { sortReviews } from './componentHelpers';
+import { useResultMessage } from './../../../hooks/reviews.hooks';
 
 const textAreaInputConfig = {
     rows: '5',
@@ -35,9 +36,6 @@ const ReviewTextArea = ({ label, name, emptyMessage }) => {
     );
 };
 
-const successMessage = 'Благодарим за отзыв! После модерации он появится на сайте';
-const errorMessage = 'Что-то пошло не так... Попробуйте позднее';
-
 const Reviews = () => {
 
     const dispatch = useDispatch();
@@ -51,26 +49,15 @@ const Reviews = () => {
     const [form] = Form.useForm();
 
     const onFinish = (data) => {
-        console.log('Success:', data);
         dispatch(setReview(data));
         form.resetFields();
     };
 
     useStaticPage();
 
-    useEffect(() => dispatch(getReviews()), [dispatch]);
+    useResultMessage(showSuccessMessage, showErrorMessage, dispatch);
 
-    useEffect(() => {
-        if (showSuccessMessage) {
-            message.info(successMessage, 7, () => dispatch(toggleSuccessMessage(false)));
-        } else if (showErrorMessage) {
-            message.error(errorMessage, 7, () => dispatch(toggleErrorMessage(false)));
-        }
-        return () => {
-            dispatch(toggleSuccessMessage(false));
-            dispatch(toggleErrorMessage(false));
-        };
-    }, [showSuccessMessage, showErrorMessage, dispatch]);
+    useEffect(() => dispatch(getReviews()), [dispatch]);
 
     if (isLoading) return <Preloader />;
 
