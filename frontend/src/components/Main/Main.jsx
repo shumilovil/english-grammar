@@ -10,7 +10,7 @@ import './Main.scss';
 
 const Category = lazy(() => import('../Category/Category'));
 const Contacts = lazy(() => import('../StaticPages/Contacts'));
-const Reviews = lazy(() => import('../StaticPages/Reviews'));
+const Reviews = lazy(() => import('../StaticPages/Reviews/Reviews'));
 const Publications = lazy(() => import('../StaticPages/Publications'));
 
 export const Main = ({ isAppLoading }) => {    

@@ -6,7 +6,7 @@ import { Preloader } from './../../Preloader/Preloader';
 import { useEffect } from 'react';
 import { useCategoryTitle, useCategoryUrl } from '../../../hooks/category.hooks';
 import './TeachersSubcategory.scss';
-import { removeUnderscore } from './helpers';
+import { removeUnderscore } from './componentHelpers';
 
 export const TeachersSubcategory = () => {
 

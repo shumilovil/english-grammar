@@ -1,0 +1,14 @@
+.review {    
+    &__username {
+        h3 {
+            display: inline-block;
+        }
+    }
+    &__text,
+    &__username {
+        margin-bottom: 15px;
+    }
+    &__date {
+        font-style: italic;
+    }
+}

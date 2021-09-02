@@ -1,0 +1,16 @@
+$antDesignBreakPoint: 576px;
+$labelWidth: 120px;
+
+#new-review {
+    .ant-form-item-label {
+        @media screen and (min-width: $antDesignBreakPoint) {
+           width: $labelWidth;
+        }  
+    }
+
+    button[type='submit'] {
+        @media screen and (min-width: $antDesignBreakPoint) {
+            margin-left: $labelWidth;
+        }        
+    }
+}

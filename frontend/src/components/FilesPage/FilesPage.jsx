@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFiles } from '../../redux/filesReducer';
 import { Preloader } from '../Preloader/Preloader';
-import { removeUnderscoreAndName } from './helpers';
+import { removeUnderscoreAndName } from './componentHelpers';
 import { FilesList } from './../FilesList/FilesList';
 import { useCategoryTitle, useCategoryUrl } from '../../hooks/category.hooks';
 

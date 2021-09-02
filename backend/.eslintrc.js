@@ -12,7 +12,8 @@ module.exports = {
         "semi": "warn",
         "quotes": [
             "warn",
-            "single"
+            "single",
+            { "allowTemplateLiterals": true }
         ],
         "spaced-comment": ["error", "always"]
     }

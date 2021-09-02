@@ -8,6 +8,7 @@ const achievements = require('./routes/achievements.route');
 const files = require('./routes/files.route');
 const https = require('https');
 const fs = require('fs');
+const reviews = require('./routes/reviews.route');
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use('/media', express.static(path.join(__dirname, 'media')));
 app.use('/api', pages);
 app.use('/api', achievements);
 app.use('/api', files);
+app.use('/api', reviews);
 
 if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, '..', 'frontend', 'build')));

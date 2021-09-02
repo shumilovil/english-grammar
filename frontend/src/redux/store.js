@@ -4,12 +4,14 @@ import { achievementsReducer } from './achievementsReducer';
 import { filesReducer } from './filesReducer';
 import { mainReducer } from './mainReducer';
 import { recommendationsReducer } from './recommendationsReducer';
+import { reviewsReducer } from './reviewsReducer';
 
 const rootReducer = combineReducers({
     app: mainReducer,
     achievements: achievementsReducer,
     files: filesReducer,
-    recommendations: recommendationsReducer
+    recommendations: recommendationsReducer,
+    reviews: reviewsReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
