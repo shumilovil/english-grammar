@@ -9,12 +9,10 @@ reviews.post('/new-review', async (req, res) => {
         const data = req.body;
         const review = new Review({ ...data });
         await review.save();
-        await sendEmailNotification(data)
-            .then(() => res.status(201).json({ message: 'The review has been created' }))
-            .catch(error => { throw error; });
+        await sendEmailNotification(data);
+        res.status(201).json({ message: 'The review has been created' });           
 
-    } catch (error) {
-        
+    } catch (error) {      
         console.error(error);
         res.status(500).json({ message: 'Something is wrong, try again' });
     }
