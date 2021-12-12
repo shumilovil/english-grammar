@@ -14,7 +14,13 @@ const app = express();
 
 const PORT = config.get('port') || 5000;
 
-app.use(cors());
+console.log('ENV', process.env.NODE_ENV);
+
+app.use(cors({
+    origin: process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:3000' 
+    : ['https://3words.ru', 'http://3words.ru', 'https://www.3words.ru', 'http://www.3words.ru']
+}));
 app.use((req, res, next) => {
     if (process.env.NODE_ENV === 'production') {
         console.log('secure', req.secure);
@@ -49,7 +55,7 @@ const start = async () => {
             useUnifiedTopology: true,
             useCreateIndex: true
         });
-        
+
         app.listen(PORT, () => {
             console.log(`App has been started on port ${PORT}...`);
             console.log('process.env.NODE_ENV', process.env.NODE_ENV);
